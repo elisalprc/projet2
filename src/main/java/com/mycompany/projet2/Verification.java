@@ -42,7 +42,7 @@ public class Verification {
         System.out.println("entrer la date sous le format : jj/mm/aaaa");
             String entrée = Lire.S();
             while (DateValide(entrée) == false){
-               System.out.println("La date entrée est incorecte");
+               System.out.println("La date entree est incorrecte");
                entrée = Lire.S();
             }
             return entrée; 
@@ -73,7 +73,7 @@ public class Verification {
         System.out.println("entrer l'horaire sous le format : hh:mm ");
             String entrée = Lire.S();
             while (HoraireValide(entrée) == false){
-               System.out.println("L'horaire entré est incorect (Rappel : l'atelier ouvre à 10 heures et ferme à 20h30.)");
+               System.out.println("L'horaire entree est incorrecte (Rappel : l'atelier ouvre a 10 heures et ferme a 20h30.)");
                entrée = Lire.S();
             }
             return entrée; 
@@ -81,10 +81,10 @@ public class Verification {
     
     //vérification de la machine:
     public static int MachineInputValid(ArrayList<Machine> LM){
-        System.out.println("entrer le numéro de la machine utilisée (de 1 à "+LM.size()+")");
+        System.out.println("entrer le numero de la machine utilisée (de 1 a "+LM.size()+")");
         int entrée = Lire.i();
         while ((entrée > LM.size())||(entrée < 1)){
-            System.out.println("la saisie de la machine est erronée veuillez recommencer (de 1 à "+LM.size()+")");
+            System.out.println("la saisie de la machine est erronée veuillez recommencer (de 1 a "+LM.size()+")");
             entrée = Lire.i();   
         }
         return entrée;    
@@ -92,10 +92,10 @@ public class Verification {
     
     //vérification de l'évènement:
     public static char EvenementInputValid(){
-    System.out.println("entrer l'évènement sous le format : A (pour arrêt) ou D (pour démarrage)");
+    System.out.println("entrer l'evenement sous le format : A (pour arret) ou D (pour démarrage)");
     char entrée = Lire.c();
     while (entrée != 'A'&& entrée != 'D'){
-        System.out.println("Une erreur est survenue dans la saisie de l'évènement, veuillez entrer A ou D");
+        System.out.println("Une erreur est survenue dans la saisie de l'evenement, veuillez entrer A ou D");
         entrée = Lire.c();
         }
     return entrée;
