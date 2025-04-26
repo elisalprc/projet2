@@ -37,7 +37,7 @@ public class Maintenance extends NewFXMain {
             }
         }
         catch(IOException e){
-            System.out.println("Une erreur est survenue à la lecture, désolé, veuillez recommencer");           
+            System.out.println("Une erreur est survenue a la lecture, desole, veuillez recommencer");           
         }
         
         // pour écrire dans le fichier texte (on va vérifier à chaque fois que ce que l'utilisateur entre correspond bien aux données voulues et acceptées pour éviter les erreurs
@@ -65,7 +65,7 @@ public class Maintenance extends NewFXMain {
                 System.out.println("Text File Written To"); //pour dire que ça a bien écrit dans le fichier texte :)
         }
         catch(IOException e){
-            System.out.println("Une erreur est survenue à l'écriture, désolé, veuillez recommencer");           
+            System.out.println("Une erreur est survenue a l'ecriture, desole, veuillez recommencer");           
         }
     }
 }
