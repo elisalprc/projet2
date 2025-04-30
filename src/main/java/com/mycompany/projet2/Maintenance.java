@@ -70,8 +70,4 @@ public class Maintenance extends NewFXMain {
     }
 }
 
-//Cahier de maintenance de l'atelier de fabrication : 
-//
-//
-//Date       Heure   Machine   Evènements   Opérateur   Cause 
 
