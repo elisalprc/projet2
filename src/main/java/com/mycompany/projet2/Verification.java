@@ -58,8 +58,8 @@ public class Verification {
             LocalTime horaire = LocalTime.parse(input, formatteur);
             
             //on définit les limites temporelles, les machines ne peuvent tourner qu'entre l'ouverture et la fermeture de l'atelier
-            LocalTime ouverture = LocalTime.of(10, 0); 
-            LocalTime fermeture = LocalTime.of(20, 30);
+            LocalTime ouverture = LocalTime.of(6, 00); 
+            LocalTime fermeture = LocalTime.of(20, 00);
             
             //on test et compare :
             return !horaire.isBefore(ouverture) && !horaire.isAfter(fermeture);
@@ -73,7 +73,7 @@ public class Verification {
         System.out.println("entrer l'horaire sous le format : hh:mm ");
             String entrée = Lire.S();
             while (HoraireValide(entrée) == false){
-               System.out.println("L'horaire entree est incorrecte (Rappel : l'atelier ouvre a 10 heures et ferme a 20h30.)");
+               System.out.println("L'horaire entree est incorrecte (Rappel : l'atelier ouvre a 6h et ferme a 20h.)");
                entrée = Lire.S();
             }
             return entrée; 
