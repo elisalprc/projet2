@@ -7,9 +7,17 @@ package com.mycompany.projet2;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -20,24 +28,39 @@ public class NewFXMain extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+        GridPane pane1 = new GridPane();
+        pane1.setAlignment(Pos.CENTER);
+        pane1.setHgap(5.5);
+        pane1.setVgap(5.5);
+        pane1.add(new Label("Atelier"), 0, 0); //x,y
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Bienvenue dans l'atelier");
-        primaryStage.setScene(scene);
+        VBox paneV = new VBox();
+        paneV.setPadding(new Insets(20, 50, 50, 50));
+        paneV.setSpacing(10);
+        paneV.getChildren().add(pane1);
+        Scene scene = new Scene(paneV, 300, 300);  
+        primaryStage.setScene(scene);               
+        primaryStage.setTitle("Atelier");        
         primaryStage.show();
+        
+        MenuButton menuMachine = new MenuButton("action");
+        MenuItem ajtMachine = new MenuItem("Ajouter ");
+        MenuItem modifMachine = new MenuItem("Modifier");
+        MenuItem voirMachine = new MenuItem("Consulter liste");
+
+        ajtMachine.setOnAction(e -> {
+        // Changer vers la scène 1
+        });
+        modifMachine.setOnAction(e -> {
+         // Changer vers la scène 2
+        });
+        voirMachine.setOnAction(e -> {
+         // Changer vers la scène 3
+        });
+
+       menuMachine.getItems().addAll(ajtMachine,modifMachine,voirMachine);
+       
+       pane1.add(menuMachine, 0, 3);
     }
 
     /**
