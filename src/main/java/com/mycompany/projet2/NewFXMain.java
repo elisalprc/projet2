@@ -30,24 +30,23 @@ public class NewFXMain extends Application {
     public void start(Stage primaryStage) {
         GridPane pane1 = new GridPane();
         pane1.setAlignment(Pos.CENTER);
-        pane1.setHgap(5.5);
-        pane1.setVgap(5.5);
-        pane1.add(new Label("Atelier"), 0, 0); //x,y
+        pane1.setHgap(6.6);
+        pane1.setVgap(6.6);
         
         VBox paneV = new VBox();
         paneV.setPadding(new Insets(20, 50, 50, 50));
         paneV.setSpacing(10);
         paneV.getChildren().add(pane1);
-        Scene scene = new Scene(paneV, 300, 300);  
+        Scene scene = new Scene(paneV, 600, 300);  
         primaryStage.setScene(scene);               
         primaryStage.setTitle("Atelier");        
         primaryStage.show();
         
-        MenuButton menuMachine = new MenuButton("action");
+        MenuButton menuMachine = new MenuButton("Machines");
         MenuItem ajtMachine = new MenuItem("Ajouter ");
         MenuItem modifMachine = new MenuItem("Modifier");
         MenuItem voirMachine = new MenuItem("Consulter liste");
-
+        
         ajtMachine.setOnAction(e -> {
         // Changer vers la scène 1
         });
@@ -57,10 +56,92 @@ public class NewFXMain extends Application {
         voirMachine.setOnAction(e -> {
          // Changer vers la scène 3
         });
-
-       menuMachine.getItems().addAll(ajtMachine,modifMachine,voirMachine);
+        menuMachine.getItems().addAll(ajtMachine,modifMachine,voirMachine);
        
-       pane1.add(menuMachine, 0, 3);
+        pane1.add(menuMachine, 0, 0);
+        
+        MenuButton menuPoste = new MenuButton("Postes");
+        MenuItem ajtPoste = new MenuItem("Ajouter ");
+        MenuItem modifPoste = new MenuItem("Modifier");
+        MenuItem voirPoste = new MenuItem("Consulter liste");
+        
+        ajtPoste.setOnAction(e -> {
+        // Changer vers la scène 1
+        });
+        modifPoste.setOnAction(e -> {
+         // Changer vers la scène 2
+        });
+        voirPoste.setOnAction(e -> {
+         // Changer vers la scène 3
+        });
+        
+        menuPoste.getItems().addAll(ajtPoste,modifPoste,voirPoste);
+       
+        pane1.add(menuPoste, 1, 0);
+        
+        MenuButton menuGamme = new MenuButton("Gammes");
+        MenuItem ajtGamme = new MenuItem("Ajouter ");
+        MenuItem modifGamme = new MenuItem("Modifier");
+        MenuItem voirGamme = new MenuItem("Consulter liste");
+
+        ajtGamme.setOnAction(e -> {
+        // Changer vers la scène 1
+        });
+        modifGamme.setOnAction(e -> {
+         // Changer vers la scène 2
+        });
+        voirGamme.setOnAction(e -> {
+         // Changer vers la scène 3
+        });
+
+        menuGamme.getItems().addAll(ajtGamme,modifGamme,voirGamme);
+       
+        pane1.add(menuGamme, 2, 0);
+        
+        MenuButton menuProduit = new MenuButton("Produits");
+        MenuItem ajtProduit = new MenuItem("Ajouter ");
+        MenuItem modifProduit = new MenuItem("Modifier");
+        MenuItem voirProduit = new MenuItem("Consulter liste");
+
+        ajtProduit.setOnAction(e -> {
+        // Changer vers la scène 1
+        });
+        modifProduit.setOnAction(e -> {
+         // Changer vers la scène 2
+        });
+        voirProduit.setOnAction(e -> {
+         // Changer vers la scène 3
+        });
+
+        menuProduit.getItems().addAll(ajtProduit,modifProduit,voirProduit);
+       
+        pane1.add(menuProduit, 3, 0);
+        
+        MenuButton menuPersonnel = new MenuButton("Personnel");
+        MenuItem ajtPersonnel = new MenuItem("Ajouter ");
+        MenuItem modifPersonnel = new MenuItem("Modifier");
+        MenuItem voirPersonnel = new MenuItem("Consulter liste");
+
+        ajtPersonnel.setOnAction(e -> {
+        // Changer vers la scène 1
+        });
+        modifPersonnel.setOnAction(e -> {
+         // Changer vers la scène 2
+        });
+        voirPersonnel.setOnAction(e -> {
+         // Changer vers la scène 3
+        });
+
+       menuPersonnel.getItems().addAll(ajtPersonnel,modifPersonnel,voirPersonnel);
+       
+       pane1.add(menuPersonnel, 4, 0);
+       
+       Button fiabilite =  new Button("Fiabilité");
+       pane1.add(fiabilite, 5, 0);
+       
+       fiabilite.setOnAction(e ->{
+           
+       });
     }
 
     /**
