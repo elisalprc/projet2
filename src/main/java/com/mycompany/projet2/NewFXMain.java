@@ -25,7 +25,7 @@ import javafx.stage.Stage;
  * @author elisa
  */
 public class NewFXMain extends Application {
-    
+      
     @Override
     public void start(Stage primaryStage) {
         GridPane pane1 = new GridPane();
@@ -48,8 +48,15 @@ public class NewFXMain extends Application {
         MenuItem voirMachine = new MenuItem("Consulter liste");
         
         ajtMachine.setOnAction(e -> {
-        // Changer vers la scène 1
+        Stage stage = new Stage();    
+        Scene sc = new Scene(new VueAjtMachine());
+        stage.setScene(sc);
+        stage.setTitle("Ajouter machine");
+        stage.show();   
         });
+        
+        //a voir comment positionner la fenetre sur le coté et sa taille car elle a l'air un peu étroite 
+        
         modifMachine.setOnAction(e -> {
          // Changer vers la scène 2
         });
