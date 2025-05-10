@@ -27,9 +27,17 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.layout.VBox;
+
 
    
 public class AjouterPoste extends NewFXMain {
+    
+    private VBox cadreParent;
+            
+    public AjouterPoste(VBox cadrePoste) {
+        this.cadreParent = cadrePoste;
+    }
     
     public GridPane getVue() {
     GridPane pane = new GridPane();
@@ -66,7 +74,7 @@ public class AjouterPoste extends NewFXMain {
        
        //enregistrer le poste, ou le supprimer
        Button btAddPoste = new Button("Ajouter le poste");
-       Button btAnnul = new Button("Supprimer le poste");
+       Button btAnnul = new Button("annuler");
        pane.add(btAddPoste, 0, 8);
        pane.add(btAnnul, 1, 8);
        
@@ -84,9 +92,7 @@ public class AjouterPoste extends NewFXMain {
        });
         //pour supprimer les infos (à faire plus tard, il faut que je vois comment on fait à la maison. Same pour afficher la liste des machines) : 
         btAnnul.setOnAction(evt ->{
-            rposte.clear();
-            dposte.clear();
-            descposte.clear();
+            cadreParent.getChildren().clear();
         });
             
        //pour ouvrir la fenetre, avec le pane et tout (même si ça c'est juste pour tester):
