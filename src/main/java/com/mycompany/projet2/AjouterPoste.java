@@ -30,12 +30,12 @@ import javafx.geometry.Pos;
 
    
 public class AjouterPoste extends NewFXMain {
-     @Override
-    public void start(Stage primaryStage) {        
-       GridPane pane = new GridPane();
-       pane.setAlignment(Pos.CENTER);
-       pane.setHgap(8.8);
-       pane.setVgap(8.8);
+    
+    public GridPane getVue() {
+    GridPane pane = new GridPane();
+    pane.setAlignment(Pos.CENTER);
+    pane.setHgap(9.9);
+    pane.setVgap(9.9);
        
        //les refs de poste :
        pane.add(new Label("reference du poste :"),0,0);
@@ -46,10 +46,10 @@ public class AjouterPoste extends NewFXMain {
        pane.add(dposte, 1, 1);
        pane.add(new Label("référence de l'équipement :"),0,2);
        TextField req = new TextField();
-       pane.add(dposte, 1, 2);
+       pane.add(req, 1, 2);
        pane.add(new Label("id de l'équipement :"),0,3);
        TextField deq = new TextField();
-       pane.add(dposte, 1, 3);
+       pane.add(deq, 1, 3);
        
        
        //la description (ajoutée au début, histoire d'un peu comprendre. C'est pas une variable du coup)
@@ -67,8 +67,8 @@ public class AjouterPoste extends NewFXMain {
        //enregistrer le poste, ou le supprimer
        Button btAddPoste = new Button("Ajouter le poste");
        Button btAnnul = new Button("Supprimer le poste");
-       pane.add(btAddPoste, 0, 7);
-       pane.add(btAnnul, 1, 7);
+       pane.add(btAddPoste, 0, 8);
+       pane.add(btAnnul, 1, 8);
        
        btAddMachPoste.setOnAction(evt -> {
            TextField AddMachine = new TextField();
@@ -90,10 +90,7 @@ public class AjouterPoste extends NewFXMain {
         });
             
        //pour ouvrir la fenetre, avec le pane et tout (même si ça c'est juste pour tester):
-       Scene scene = new Scene(pane, 500, 300);   // Construire une scène à partir de la racine du graphe de scène
-       primaryStage.setScene(scene);               // The stage sets scene
-       primaryStage.setTitle("Ajouter Poste");        // Définir le titre de la fenêtre
-       primaryStage.show();   
+       return pane;
     }
     
 }
