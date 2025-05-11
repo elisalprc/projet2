@@ -88,11 +88,7 @@ public class NewFXMain extends Application {
         MenuItem voirMachine = new MenuItem("Consulter liste");
         
         ajtMachine.setOnAction(e -> {
-            Stage stage = new Stage();    
-            Scene sc = new Scene(new VueAjtMachine());
-            stage.setScene(sc);
-            stage.setTitle("Ajouter machine");
-            stage.show(); 
+            
         });
         
         //a voir comment positionner la fenetre sur le coté et sa taille car elle a l'air un peu étroite 
@@ -113,7 +109,7 @@ public class NewFXMain extends Application {
         MenuItem voirPoste = new MenuItem("Consulter liste");
         
         ajtPoste.setOnAction(e -> {
-            AjouterPoste ajouterPoste = new AjouterPoste();
+            AjouterPoste ajouterPoste = new AjouterPoste(cadrePoste);
             GridPane vue = ajouterPoste.getVue();  // On récupère l'interface
 
             cadrePoste.getChildren().setAll(vue);
