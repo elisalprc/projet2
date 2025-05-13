@@ -27,7 +27,8 @@ public class Verification {
             LocalDate date = LocalDate.parse(input, formatteur);
             
             //on définit les limites temporelles, parce que non on ne veut pas de 00/01/1555 ! ou de 31/01/2087!
-            LocalDate min = LocalDate.now().minusYears(5); //on part du principe que notre atelier à été créé il y à 5 ans (si ça vous va :)
+            String CreationAtelier = "05/01/2020"; //on a décidé que notre Atelier serait crée à cette date là :)
+            LocalDate min = LocalDate.parse(CreationAtelier, formatteur); 
             LocalDate max = LocalDate.now(); //on ne pourra pas entrer de date supérieure à celle du jour, parce que bah oui aujourd'hui n'est pas le futur pour les machines.
             
             //on test et compare :
@@ -114,10 +115,10 @@ public class Verification {
     
     //vérification de la cause:
     public static String CauseInputValide(){
-    System.out.println("entrer la cause : panne, accident, maintenance ou x si aucun des trois");
+    System.out.println("entrer la cause : panne, accident, maintenance ou ok si aucun des trois (démarrage)");
     String entrée = Lire.S();
-    while ((!"panne".equals(entrée))&&(!"accident".equals(entrée))&&(!"maintenance".equals(entrée))&&(!"x".equals(entrée))){
-        System.out.println("Une erreur est survenue dans la saisie de la cause, veuillez entrer : panne, accident, maintenance ou x si aucun des trois");
+    while ((!"panne".equals(entrée))&&(!"accident".equals(entrée))&&(!"maintenance".equals(entrée))&&(!"ok".equals(entrée))){
+        System.out.println("Une erreur est survenue dans la saisie de la cause, veuillez entrer : panne, accident, maintenance ou ok si la machine redémarre");
         entrée = Lire.S();
     }
     return entrée;
