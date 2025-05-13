@@ -18,10 +18,10 @@ public class Machine extends Equipement {
     private String refMachine;
     private String type;
     private String dmachine;
-    private float origine_x;
-    private float origine_y;
-    private float cout;
-    private float t; //temps en heures
+    private double origine_x;
+    private double origine_y;
+    private double cout;
+    private double t; //temps en heures
     private String etat; // description de l'etat
 
     public String getRefMachine() {
@@ -36,19 +36,19 @@ public class Machine extends Equipement {
         return dmachine;
     }
 
-    public float getOrigine_x() {
+    public double getOrigine_x() {
         return origine_x;
     }
 
-    public float getOrigine_y() {
+    public double getOrigine_y() {
         return origine_y;
     }
 
-    public float getCout() {
+    public double getCout() {
         return cout;
     }
 
-    public float getT() {
+    public double getT() {
         return t;
     }
 
@@ -68,19 +68,19 @@ public class Machine extends Equipement {
         this.dmachine = dmachine;
     }
 
-    public void setOrigine_x(float origine_x) {
+    public void setOrigine_x(double origine_x) {
         this.origine_x = origine_x;
     }
 
-    public void setOrigine_y(float origine_y) {
+    public void setOrigine_y(double origine_y) {
         this.origine_y = origine_y;
     }
 
-    public void setCout(float cout) {
+    public void setCout(double cout) {
         this.cout = cout;
     }
 
-    public void setT(float t) {
+    public void setT(double t) {
         this.t = t;
     }
 
@@ -88,7 +88,7 @@ public class Machine extends Equipement {
         this.etat = etat;
     }
 
-    public Machine(String refMachine, String type, String dmachine, float origine_x, float origine_y, float cout, float t, String etat, String refEquipement, String dEquipement) {
+    public Machine(String refMachine, String type, String dmachine, double origine_x, double origine_y, double cout, double t, String etat, String refEquipement, String dEquipement) {
         super(refEquipement, dEquipement);
         this.refMachine = refMachine;
         this.type = type;
@@ -98,6 +98,17 @@ public class Machine extends Equipement {
         this.cout = cout;
         this.t = t;
         this.etat = etat;
+    }
+    
+    public Machine(String refMachine, String type, String dmachine, double origine_x, double origine_y, double cout, double t, String etat) {
+        this.refMachine = refMachine;
+        this.type = type;
+        this.dmachine = dmachine;
+        this.origine_x = origine_x;
+        this.origine_y = origine_y;
+        this.cout = cout;
+        this.t = t;
+        this.etat=etat;
     }
     
     public void afficherMachine(){
@@ -115,7 +126,7 @@ public class Machine extends Equipement {
         return this.dmachine + ", ref : " + this.refMachine + ", type : " + this.type + ", endroit : " + this.origine_x + "," + this.origine_y + ", cout : " + this.cout + " e/h, temps : " +this.t + " h, etat : " + this.etat;
     }
     
-    public void modifierMachine(String type, String dmachine, float origine_x, float origine_y, float cout, float t, String etat) {
+    public void modifierMachine(String type, String dmachine, double origine_x, double origine_y, double cout, double t, String etat) {
         this.type = type;
         this.dmachine = dmachine;
         this.origine_x = origine_x;
