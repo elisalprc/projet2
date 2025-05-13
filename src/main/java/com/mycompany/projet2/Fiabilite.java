@@ -5,10 +5,10 @@
 package com.mycompany.projet2;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.time.LocalDate;
+//import java.time.Duration;
+//import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Period;
+//import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -79,8 +79,32 @@ public class Fiabilite {
         return To;
     }
     
-    public static int Temps_Arret(String machine){
+    public static int Temps_Arret(ArrayList<Integer> Indice_retenu){ 
+    //pour les formats des dates : sera utile pour le calcul du temps d'arret
+        String formatDate = "dd/MM/yyyy";
+        DateTimeFormatter formatteurD = DateTimeFormatter.ofPattern(formatDate);
+        String formatHeure = "HH:mm";
+        DateTimeFormatter formatteurH = DateTimeFormatter.ofPattern(formatHeure);
         
+    //on va récuperer les différents temps d'arrets relevés sur la periode d'observation (unité : minute) et les additionner ensemble  
+        int TpsArret = 0; //initialisation de la variable qui va compter la durée des temps d'arret (en minute)
+        for (int i =0; i<(Indice_retenu.size())-1; i=i+2){
+           String DateDepart = Liste_Date.get(i+1);
+           String DateArret = Liste_Date.get(i);
+           String HoraireDepart = Liste_Horaire.get(i+1);
+           String HoraireArret = Liste_Horaire.get(i);
+           LocalDateTime DD = LocalDateTime.parse(DateDepart, formatteurD);
+           LocalDateTime DA = LocalDateTime.parse(DateArret, formatteurD);
+           LocalDateTime HD = LocalDateTime.parse(DateDepart, formatteurH);
+           LocalDateTime HA = LocalDateTime.parse(DateArret, formatteurH);
+    //on va maintenant calculer la différence entre les dates (différence en unité de temps : minute)
+        long differenceInMinutesD = ChronoUnit.MINUTES.between(DA, DD);
+        long differenceInMinutesH = ChronoUnit.MINUTES.between(HA, HD);
+        TpsArret = TpsArret + (int) differenceInMinutesD + (int) differenceInMinutesH;
+        }
+        System.out.println("la durée des tps d'arrets observée en minute est : "+TpsArret);
+    //retour de la durée des temps d'arret de la machine observée (donc aux indices de Indice_retenu)
+        return TpsArret; 
     }
     
     
@@ -90,12 +114,14 @@ public class Fiabilite {
         
         //creation d'une arrayliste des indices trouvés
         ArrayList<Integer> Indice_retenu = new ArrayList<>();
+        Indice_retenu.clear(); //on va la réinitialiser à chaque fois pour éviter les erreurs
         
         //on récupère les données du fichier
         Recup_Donnees_Fichier_Texte();
         
         //on va parcourir la liste des Machines à la recherche de la machine dont on souhaite déterminer la fiabilité
         for (i=0; i< (Liste_Machine.size()-1); i++){
+            //Indice_retenu.clear(); //on va la réinitialiser à chaque boucle pour éviter les erreurs
             if (machine == Liste_Machine.get(i)){
                 Indice_retenu.add(i);
             }
@@ -103,11 +129,11 @@ public class Fiabilite {
         
         //pour vérifier on les affiche ds la console
         for (i=0; i< (Indice_retenu.size()-1); i++){
-            System.out.println(Indice_retenu.get(i));
+            System.out.println("Indice_retenu.get("+i+"): "+Indice_retenu.get(i));
         }
         
-        //fiabilité c  1 - (temps d'arrêt/temps d'observation : Temps_Observation())
-        
+        //fiabilité c  1 - (temps d'arrêt : Temps_Arret() /temps d'observation : Temps_Observation())
+        f = (1-(Temps_Arret(Indice_retenu)/Temps_Observation()));
         return 0;
     }
     
