@@ -33,6 +33,8 @@ public class Equipement {
         this.dEquipement = dEquipement;
     }
     
+    public Equipement(){}
+    
     @Override
     public String toString(){
         return "equipement : " + this.dEquipement + ", ref : " + this.refEquipement;
