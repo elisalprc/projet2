@@ -5,10 +5,7 @@
 package com.mycompany.projet2;
 
 import java.io.IOException;
-//import java.time.Duration;
-//import java.time.LocalDate;
 import java.time.LocalDateTime;
-//import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -206,7 +203,7 @@ public class Fiabilite {
         
 }
 
-
+//A rentrer ds le NewFXMain pour tester : (bien sûr il faut enlever les "//"!)
 
 //public static void initialisationLM(ArrayList<Machine> LM){
 
