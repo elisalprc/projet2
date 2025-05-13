@@ -30,7 +30,8 @@ import javafx.stage.Stage;
  * @author elisa
  */
 public class NewFXMain extends Application {
-      
+    public Atelier Atelier1 = new Atelier();
+    
     @Override
     public void start(Stage primaryStage) {
          BorderPane root = new BorderPane();  // structure principale
@@ -88,7 +89,11 @@ public class NewFXMain extends Application {
         MenuItem voirMachine = new MenuItem("Consulter liste");
         
         ajtMachine.setOnAction(e -> {
-            
+            //Stage stage = new Stage();    
+            //Scene sc = new Scene(new VueAjtMachine());
+            //stage.setScene(sc);
+            //stage.setTitle("Ajouter machine");
+            //stage.show(); 
         });
         
         //a voir comment positionner la fenetre sur le coté et sa taille car elle a l'air un peu étroite 
