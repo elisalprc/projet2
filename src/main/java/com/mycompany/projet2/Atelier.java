@@ -80,6 +80,8 @@ public class Atelier {
             this.listeGamme = listeGamme;
             this.listeOperateurs = listeOperateurs;
         }
+        
+        public Atelier(){}
     
     //Methodes:
         //Ajout d'un élément dans les listes:
