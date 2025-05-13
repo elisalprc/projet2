@@ -70,7 +70,7 @@ public class VueAjtMachine extends GridPane {
     public VueAjtMachine() {        //pour modif machine on aura besoin d'un argument machine (modele)
         //il faudrait arriver à passer atelier en argument pour pouvoi rajt la mach cree 
         
-        //this.model = atelier;
+        //this.model = atelier;            
         this.setHgap(5.5);
         this.setVgap(5.5);
         this.setAlignment(Pos.CENTER);
@@ -92,10 +92,11 @@ public class VueAjtMachine extends GridPane {
         this.add(this.temps = new TextField(),1,7);
         this.btAjt = new Button("Ajouter");
         this.add(btAjt,1,8);
-        //this.ctrlM=new ControleurMachine(this); bu a cette ligne 
-        //this.btAjt.setOnAction((t) -> {
-         //   this.ctrlM.ajtM(t);
-        //});
+
+        this.btAjt.setOnAction((t) -> {
+            this.ctrlM=new ControleurMachine(this);
+            this.ctrlM.ajtM(t);
+        });
         }
         
         
