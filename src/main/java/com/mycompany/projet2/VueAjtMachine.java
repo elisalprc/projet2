@@ -5,6 +5,7 @@
 package com.mycompany.projet2;
 
 
+import com.mycompany.projet2.Modelepackage.Atelier;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

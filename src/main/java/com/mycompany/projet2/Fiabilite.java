@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2;
 
+import com.mycompany.projet2.FichierTextpackage.ReadFile;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2;
 
+import com.mycompany.projet2.Modelepackage.Atelier;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
