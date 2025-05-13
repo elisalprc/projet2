@@ -61,7 +61,7 @@ public class Maintenance extends NewFXMain {
                  LOP.add(op);
             int Operateur = OperateurInputValide(LOP); //pour entrer l'opérateur
             String Cause = CauseInputValide();
-            fichier_texte.writeToFile(Date+"   "+Horaire+"   Mach_"+Machine+"    "+Evenement+"            OP"+Operateur+"       "+Cause);
+            fichier_texte.writeToFile(Date+";"+Horaire+";Mach_"+Machine+";"+Evenement+";OP"+Operateur+";"+Cause);
                 System.out.println("Text File Written To"); //pour dire que ça a bien écrit dans le fichier texte :)
         }
         catch(IOException e){
