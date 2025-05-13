@@ -119,7 +119,6 @@ public class Fiabilite {
             }
         }
     }
-
     // Si la machine était présente et qu'il reste un arrêt, on va prendre pour durée d'arrêt la période qui va de l'arrêt à aujourd'hui
     if (machinePresente && arretEnCours != null) {
         LocalDateTime Aujourdhui = LocalDateTime.now();
@@ -128,7 +127,6 @@ public class Fiabilite {
             TpsArret += diff;
         }
     }
-
     // D'où si la machine n'apparait jamais dans le fichier : temps d'arrêt = 0
     return TpsArret;
 }
@@ -149,12 +147,6 @@ public class Fiabilite {
                 Indice_retenu.add(i);
             }
         }
-        
-        //pour vérifier on les affiche ds la console
-        for (int i=0; i< (Indice_retenu.size()-1); i++){
-            System.out.println("Indice_retenu.get("+i+"): "+Indice_retenu.get(i));
-        }
-        
         //initialisation des différents temps necessaire au calcul de la fiabilité
         int tempsArret = Temps_Arret(machine);
         int tempsObservation = Temps_Observation();

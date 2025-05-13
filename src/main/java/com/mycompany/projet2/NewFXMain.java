@@ -5,6 +5,7 @@
 package com.mycompany.projet2;
 
 import com.mycompany.projet2.Modelepackage.Atelier;
+import com.mycompany.projet2.Vuepackage.SceneFiabilite;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -191,9 +192,25 @@ public class NewFXMain extends Application {
        Button fiabilite =  new Button("Fiabilité");
        menuBar.add(fiabilite, 5, 0);
        
-       fiabilite.setOnAction(e ->{
-           
-       });
+////////////////////////////////////////////////////////////////////////////////
+//                FENETRE FIABILITE                                           //
+////////////////////////////////////////////////////////////////////////////////
+       
+         VBox cadreFiab = new VBox();
+        cadreFiab.setStyle("-fx-border-color: grey; -fx-border-width: 2;");  // Style du cadre
+        cadreFiab.setPadding(new Insets(10));  // Marge autour du cadre
+        cadreFiab.setPrefWidth(400);  // Largeur du cadre
+        cadreFiab.setPrefHeight(400);  // Hauteur du cadre
+        contentPane.getChildren().add(cadreFiab);  // Ajouter le cadre à la zone droite
+        // Ajouter le contentPane dans le BorderPane, à droite
+        root.setRight(contentPane);  // Zone de droite
+        
+        fiabilite.setOnAction(e -> {
+            SceneFiabilite scenefiab = new SceneFiabilite(cadreFiab);
+            GridPane vue = scenefiab.getVueFiab(primaryStage);  // On récupère l'interface
+
+            cadrePoste.getChildren().setAll(vue);
+        });
     }
     
     /**
