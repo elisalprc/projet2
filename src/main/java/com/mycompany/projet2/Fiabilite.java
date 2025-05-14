@@ -196,54 +196,54 @@ public class Fiabilite {
         
 }
 
-//A rentrer ds le NewFXMain pour tester : (bien sûr il faut enlever les "//"!)
+/*A rentrer ds le NewFXMain pour tester : (bien sûr il faut enlever les "//"!)
 
-//public static void initialisationLM(ArrayList<Machine> LM){
+public static void initialisationLM(ArrayList<Machine> LM){
 
-                //Machine M1 = new Machine("redTEST","decoupeuse","decoup laser",2,2,10,2,"libre","eqM1","machine1");
-                //Machine M2 = new Machine("refTEST2","imprimante","imp 3D",4,4,30,8,"libre","eqM2","machine2");
-                //Machine M3 = new Machine("refTEST3","imprimante","imp 3D",6,4,30,8,"libre","eqM2","machine2");
-                //Machine M4 = new Machine("refTEST4","soudeur","soude",4,4,30,0,"libre","eqM2","machine2");
-                //Machine M5 = new Machine("refTEST5","imprimante","imp 3D",4,3,30,8,"libre","eqM2","machine2");
-                //Machine M6 = new Machine("refTEST6","imprimante","imp 3D",4,4,30,8,"libre","eqM2","machine2");
-                //LM.add(M1);
-                //LM.add(M2);
-                //LM.add(M3);
-                //LM.add(M4);
-                //LM.add(M5);
-                //LM.add(M6);
-    //}
+                Machine M1 = new Machine("redTEST","decoupeuse","decoup laser",2,2,10,2,"libre","eqM1","machine1");
+                Machine M2 = new Machine("refTEST2","imprimante","imp 3D",4,4,30,8,"libre","eqM2","machine2");
+                Machine M3 = new Machine("refTEST3","imprimante","imp 3D",6,4,30,8,"libre","eqM2","machine2");
+                Machine M4 = new Machine("refTEST4","soudeur","soude",4,4,30,0,"libre","eqM2","machine2");
+                Machine M5 = new Machine("refTEST5","imprimante","imp 3D",4,3,30,8,"libre","eqM2","machine2");
+                Machine M6 = new Machine("refTEST6","imprimante","imp 3D",4,4,30,8,"libre","eqM2","machine2");
+                LM.add(M1);
+                LM.add(M2);
+                LM.add(M3);
+                LM.add(M4);
+                LM.add(M5);
+                LM.add(M6);
+    }
 
-//ArrayList<Machine> LM = new ArrayList<>();
-        //initialisationLM(LM);
-        //ArrayList<String> LMA = new ArrayList<>();
-        //for (int i=0; i< (LM.size())-1; i++){
-        //   LMA.add("Mach_"+i);
-       // }
-       // CalculFiabilite(LMA.get(1));
-        //EtudeFiabilite(LMA);
-        //Temps_Observation();
+ArrayList<Machine> LM = new ArrayList<>();
+        initialisationLM(LM);
+        ArrayList<String> LMA = new ArrayList<>();
+        for (int i=0; i< (LM.size())-1; i++){
+           LMA.add("Mach_"+i);
+        }
+        CalculFiabilite(LMA.get(1));
+        EtudeFiabilite(LMA);
+        Temps_Observation();
 
-//import static com.mycompany.projet2.Fiabilite.CalculFiabilite;
-//import static com.mycompany.projet2.Fiabilite.Recup_Donnees_Fichier_Texte;
-//import static com.mycompany.projet2.Fiabilite.EtudeFiabilite;
-//import static com.mycompany.projet2.Fiabilite.Temps_Observation;
-//import java.util.ArrayList;
+import static com.mycompany.projet2.Fiabilite.CalculFiabilite;
+import static com.mycompany.projet2.Fiabilite.Recup_Donnees_Fichier_Texte;
+import static com.mycompany.projet2.Fiabilite.EtudeFiabilite;
+import static com.mycompany.projet2.Fiabilite.Temps_Observation;
+import java.util.ArrayList;
 
-//ArrayList<Machine> LM = new ArrayList<>();
-  //      initialisationLM(LM);
-    //    ArrayList<String> LMA = new ArrayList<>();
-      //  for (int i=0; i< (LM.size()); i++){
-        //   LMA.add("Mach_"+(i+1));
-          // System.out.println(LMA.get(i));
-        //}
-        //CalculFiabilite(LMA.get(1));
-        //EtudeFiabilite(LMA);
+ArrayList<Machine> LM = new ArrayList<>();
+        initialisationLM(LM);
+        ArrayList<String> LMA = new ArrayList<>();
+        for (int i=0; i< (LM.size()); i++){
+           LMA.add("Mach_"+(i+1));
+           System.out.println(LMA.get(i));
+        }
+        CalculFiabilite(LMA.get(1));
+        EtudeFiabilite(LMA);
         
-        //System.out.println(EtudeFiabilite(LMA));
-        //Temps_Observation();
-        //System.out.println(Temps_Observation());
-        //String[] F= TrieFiabilite(EtudeFiabilite(LMA),LMA );
-        //for (int i=0; i<F.length; i++ ){
-         // System.out.println(F[i]); 
-        //}
+        System.out.println(EtudeFiabilite(LMA));
+        Temps_Observation();
+        System.out.println(Temps_Observation());
+        String[] F= TrieFiabilite(EtudeFiabilite(LMA),LMA );
+        for (int i=0; i<F.length; i++ ){
+           System.out.println(F[i]); 
+       }*/
