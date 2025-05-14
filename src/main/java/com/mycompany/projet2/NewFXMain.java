@@ -196,17 +196,9 @@ public class NewFXMain extends Application {
 //                FENETRE FIABILITE                                           //
 ////////////////////////////////////////////////////////////////////////////////
        
-         VBox cadreFiab = new VBox();
-        cadreFiab.setStyle("-fx-border-color: grey; -fx-border-width: 2;");  // Style du cadre
-        cadreFiab.setPadding(new Insets(10));  // Marge autour du cadre
-        cadreFiab.setPrefWidth(400);  // Largeur du cadre
-        cadreFiab.setPrefHeight(400);  // Hauteur du cadre
-        contentPane.getChildren().add(cadreFiab);  // Ajouter le cadre à la zone droite
-        // Ajouter le contentPane dans le BorderPane, à droite
-        root.setRight(contentPane);  // Zone de droite
-        
+          
         fiabilite.setOnAction(e -> {
-            SceneFiabilite scenefiab = new SceneFiabilite(cadreFiab);
+            SceneFiabilite scenefiab = new SceneFiabilite(cadrePoste);
             GridPane vue = scenefiab.getVueFiab(primaryStage);  // On récupère l'interface
 
             cadrePoste.getChildren().setAll(vue);
