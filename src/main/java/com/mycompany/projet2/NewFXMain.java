@@ -4,8 +4,10 @@
  */
 package com.mycompany.projet2;
 
+import com.mycompany.projet2.Modelepackage.ArrayListe_Atelier;
 import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Vuepackage.SceneFiabilite;
+import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,7 +34,7 @@ import javafx.stage.Stage;
  * @author elisa
  */
 public class NewFXMain extends Application {
-    public Atelier Atelier1 = new Atelier();
+    
     
     @Override
     public void start(Stage primaryStage) {
@@ -91,11 +93,7 @@ public class NewFXMain extends Application {
         MenuItem voirMachine = new MenuItem("Consulter liste");
         
         ajtMachine.setOnAction(e -> {
-            //Stage stage = new Stage();    
-            //Scene sc = new Scene(new VueAjtMachine());
-            //stage.setScene(sc);
-            //stage.setTitle("Ajouter machine");
-            //stage.show(); 
+            cadrePoste.getChildren().setAll(new VueAjtMachine());
         });
         
         //a voir comment positionner la fenetre sur le coté et sa taille car elle a l'air un peu étroite 
