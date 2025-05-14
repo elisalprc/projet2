@@ -5,6 +5,7 @@
 package com.mycompany.projet2;
 
 
+import com.mycompany.projet2.Modelepackage.Atelier;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,6 +18,8 @@ import javafx.scene.layout.GridPane;
  * @author elisa
  */
 public class VueAjtMachine extends GridPane {
+    private ControleurMachine ctrlM;
+    private Atelier model; // utile pour ajouter la machine dans l'atelier 
     private TextField d;
     private TextField type;
     private TextField ref;
@@ -26,10 +29,49 @@ public class VueAjtMachine extends GridPane {
     private TextField coutH;
     private TextField temps;
     private Button btAjt;
+
+    public TextField getD() {
+        return d;
+    }
+
+    public TextField getType() {
+        return type;
+    }
+
+    public TextField getRef() {
+        return ref;
+    }
+
+    public TextField getEtat() {
+        return etat;
+    }
+
+    public TextField getCx() {
+        return cx;
+    }
+
+    public TextField getCy() {
+        return cy;
+    }
+
+    public TextField getCoutH() {
+        return coutH;
+    }
+
+    public TextField getTemps() {
+        return temps;
+    }
+
     
-    //peut etre que y a pas besoin de les mettre en attribut
     
-    public VueAjtMachine() {
+    public ControleurMachine getM() {
+        return this.ctrlM;
+    }
+   
+    public VueAjtMachine() {        //pour modif machine on aura besoin d'un argument machine (modele)
+        //il faudrait arriver à passer atelier en argument pour pouvoi rajt la mach cree 
+        
+        //this.model = atelier;            
         this.setHgap(5.5);
         this.setVgap(5.5);
         this.setAlignment(Pos.CENTER);
@@ -50,28 +92,15 @@ public class VueAjtMachine extends GridPane {
         this.add(this.coutH = new TextField(),1,6);
         this.add(this.temps = new TextField(),1,7);
         this.btAjt = new Button("Ajouter");
-        this.add(btAjt,1,8); 
+        this.add(btAjt,1,8);
+
+        this.btAjt.setOnAction((t) -> {
+            this.ctrlM=new ControleurMachine(this);
+            this.ctrlM.ajtM(t);
+        });
         }
         
-        // ajout machine
-        /* Button btAdd = new Button("Ajouter");
-        pane.add(btAdd, 0, 8);
-        btAdd.setOnAction(evt -> {
-             Machine Mach_1 = new Machine(ref.getText(), 
-                              type.getText(),
-                              d.getText(),
-                              Double.parseDouble(cx.getText()),
-                              Double.parseDouble(cy.getText()),
-                              Double.parseDouble(cout.getText()),
-                              Double.parseDouble(tps.getText()),
-                              etat.getText());
-             ArrayList<Machine> listeMachine = new ArrayList<>(); 
-             listeMachine.add(Mach_1);
-             
-             
         
-             }); */
     
    
 }
-

@@ -4,6 +4,8 @@
  */
 package com.mycompany.projet2;
 
+import com.mycompany.projet2.Modelepackage.Atelier;
+import com.mycompany.projet2.Vuepackage.SceneFiabilite;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -30,7 +32,8 @@ import javafx.stage.Stage;
  * @author elisa
  */
 public class NewFXMain extends Application {
-      
+    public Atelier Atelier1 = new Atelier();
+    
     @Override
     public void start(Stage primaryStage) {
          BorderPane root = new BorderPane();  // structure principale
@@ -88,7 +91,11 @@ public class NewFXMain extends Application {
         MenuItem voirMachine = new MenuItem("Consulter liste");
         
         ajtMachine.setOnAction(e -> {
-            
+            //Stage stage = new Stage();    
+            //Scene sc = new Scene(new VueAjtMachine());
+            //stage.setScene(sc);
+            //stage.setTitle("Ajouter machine");
+            //stage.show(); 
         });
         
         //a voir comment positionner la fenetre sur le coté et sa taille car elle a l'air un peu étroite 
@@ -185,16 +192,31 @@ public class NewFXMain extends Application {
        Button fiabilite =  new Button("Fiabilité");
        menuBar.add(fiabilite, 5, 0);
        
-       fiabilite.setOnAction(e ->{
-           
-       });
-    }
+////////////////////////////////////////////////////////////////////////////////
+//                FENETRE FIABILITE                                           //
+////////////////////////////////////////////////////////////////////////////////
+       
+         VBox cadreFiab = new VBox();
+        cadreFiab.setStyle("-fx-border-color: grey; -fx-border-width: 2;");  // Style du cadre
+        cadreFiab.setPadding(new Insets(10));  // Marge autour du cadre
+        cadreFiab.setPrefWidth(400);  // Largeur du cadre
+        cadreFiab.setPrefHeight(400);  // Hauteur du cadre
+        contentPane.getChildren().add(cadreFiab);  // Ajouter le cadre à la zone droite
+        // Ajouter le contentPane dans le BorderPane, à droite
+        root.setRight(contentPane);  // Zone de droite
+        
+        fiabilite.setOnAction(e -> {
+            SceneFiabilite scenefiab = new SceneFiabilite(cadreFiab);
+            GridPane vue = scenefiab.getVueFiab(primaryStage);  // On récupère l'interface
 
+            cadrePoste.getChildren().setAll(vue);
+        });
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
-    }
-    
+        launch(args);   
+    }  
 }

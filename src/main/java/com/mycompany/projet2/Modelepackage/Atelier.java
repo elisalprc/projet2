@@ -2,8 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.projet2;
+package com.mycompany.projet2.Modelepackage;
 
+import com.mycompany.projet2.Modelepackage.Gamme;
+import com.mycompany.projet2.Modelepackage.Machine;
+import com.mycompany.projet2.Modelepackage.Poste;
+import com.mycompany.projet2.Modelepackage.Produit;
+import com.mycompany.projet2.Modelepackage.Operateur;
 import java.util.ArrayList;
 
 /**

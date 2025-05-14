@@ -8,6 +8,8 @@ package com.mycompany.projet2;
  *
  * @author clema
  */
+import com.mycompany.projet2.Modelepackage.Machine;
+import com.mycompany.projet2.Modelepackage.Poste;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;

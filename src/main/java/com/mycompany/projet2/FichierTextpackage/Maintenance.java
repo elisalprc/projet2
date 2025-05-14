@@ -2,14 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.projet2;
+package com.mycompany.projet2.FichierTextpackage;
 
-import static com.mycompany.projet2.Verification.DateInputValide;
-import static com.mycompany.projet2.Verification.HoraireInputValide;
-import static com.mycompany.projet2.Verification.CauseInputValide;
-import static com.mycompany.projet2.Verification.EvenementInputValid;
-import static com.mycompany.projet2.Verification.MachineInputValid;
-import static com.mycompany.projet2.Verification.OperateurInputValide;
+import com.mycompany.projet2.Modelepackage.Equipement;
+import com.mycompany.projet2.FichierTextpackage.ReadFile;
+import com.mycompany.projet2.FichierTextpackage.WriteFile;
+import com.mycompany.projet2.Modelepackage.Machine;
+import com.mycompany.projet2.NewFXMain;
+import com.mycompany.projet2.Modelepackage.Operateur;
+import static com.mycompany.projet2.FichierTextpackage.Verification.DateInputValide;
+import static com.mycompany.projet2.FichierTextpackage.Verification.HoraireInputValide;
+import static com.mycompany.projet2.FichierTextpackage.Verification.CauseInputValide;
+import static com.mycompany.projet2.FichierTextpackage.Verification.EvenementInputValid;
+import static com.mycompany.projet2.FichierTextpackage.Verification.MachineInputValid;
+import static com.mycompany.projet2.FichierTextpackage.Verification.OperateurInputValide;
 import java.io.IOException;
 import java.util.ArrayList;
 

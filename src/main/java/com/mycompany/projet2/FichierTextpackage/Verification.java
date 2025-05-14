@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.projet2;
+package com.mycompany.projet2.FichierTextpackage;
 
+import com.mycompany.projet2.Lire;
+import com.mycompany.projet2.Modelepackage.Machine;
+import com.mycompany.projet2.Modelepackage.Operateur;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
