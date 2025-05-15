@@ -6,8 +6,10 @@ package com.mycompany.projet2.Controleurpackage;
 
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Modelepackage.Machine;
+import static com.mycompany.projet2.NewFXMain.getCreation; 
 import java.util.ArrayList;
 import javafx.event.ActionEvent;
+
 
 /**
  *
@@ -33,9 +35,7 @@ public class ControleurMachine {
                          Double.parseDouble(this.vue.getTemps().getText()),
                          this.vue.getEtat().getText());
         machine.afficherMachine();
-        //Atelier.ajoutMachine(machine);
-             
-             
+        getCreation().getAtelier().ajoutMachine(machine);
         
              } 
         
