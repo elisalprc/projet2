@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2;
 
+import com.mycompany.projet2.Modelepackage.Machine;
 import java.util.ArrayList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;

@@ -5,9 +5,13 @@
 package com.mycompany.projet2;
 
 import com.mycompany.projet2.Modelepackage.ArrayListe_Atelier;
+import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.Atelier_de_fabrication;
+import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.LMA;
+import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.LOP;
+import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.atelier_base;
 import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Vuepackage.SceneFiabilite;
-import com.mycompany.projet2.Vuepackage.VueAjtMachine;
+//import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -207,6 +211,25 @@ public class NewFXMain extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);   
+        //launch(args); 
+        Atelier Atelier_de_Fabrication = new Atelier();
+        Atelier_de_Fabrication = atelier_base();
+        System.out.println(Atelier_de_Fabrication);
+        
+        /*for (int i=0; i<LMA.size(); i++){
+            System.out.println(LMA.get(i));  
+        }
+        /*for (int i=0; i<LOP.size(); i++){
+            System.out.println(LOP.get(i));  
+        }
+        for (int i=0; i<LMA.size(); i++){
+            System.out.println(LMA.get(i));  
+        }
+        for (int i=0; i<LMA.size(); i++){
+            System.out.println(LMA.get(i));  
+        }
+        for (int i=0; i<LMA.size(); i++){
+            System.out.println(LMA.get(i));  
+        }*/
     }  
 }
