@@ -11,6 +11,7 @@ import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.LOP;
 import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.atelier_base;
 import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Vuepackage.SceneFiabilite;
+import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 //import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
