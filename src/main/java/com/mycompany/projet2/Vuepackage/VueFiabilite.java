@@ -8,41 +8,37 @@ package com.mycompany.projet2.Vuepackage;
  *
  * @author chach
  */
-
-import com.mycompany.projet2.Controleurpackage.ControleurFiabilite;
-import static com.mycompany.projet2.Fiabilite.CalculFiabilite;
-import static com.mycompany.projet2.Fiabilite.TrieFiabilite;
-import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.InitialisationLMA;
-import com.mycompany.projet2.Modelepackage.Machine;
-import com.mycompany.projet2.NewFXMain;
-import static com.mycompany.projet2.Vuepackage.VerificationDonneeEntree.Existance_MachineEntree;
-import java.util.ArrayList;
-import javafx.event.ActionEvent;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-
-/**
- *
- * @author chach
- */
-
-public class SceneFiabilite extends NewFXMain{
-    private VBox cadreParent;
+public class VueFiabilite {
     
-    public SceneFiabilite(VBox cadreFiab) {
-        this.cadreParent = cadreFiab;
+    
+    /*
+    
+     //attributs
+    private ControleurFiabilite ctrlF;
+    //private VBox cadreParent;
+    private TextField machine = new TextField();
+
+    //getteurs et setteurs:
+
+    public TextField getMachine() {
+        return machine;
+    }
+
+    public void setMachine(TextField machine) {
+        this.machine = machine;
+    }
+    
+    //VBox cadreFiab
+    
+    public SceneFiabilite() {
+        //this.cadreParent = cadreFiab;
+        this.machine = machine;
     }
     
     static ArrayList<String> LM = new ArrayList<>(); //liste des machines de l'atelier dont on cherche à connaitre la fiabilité
     static ArrayList<Double> MachFiabilite = new ArrayList<>();
-
+    
+    
     public static void Convertion_LMA_LM(ArrayList<Machine> LMA){
         for (int i=0; i<LMA.size(); i++){
             LM.add("Mach_"+ String.valueOf(i));
@@ -52,22 +48,12 @@ public class SceneFiabilite extends NewFXMain{
         System.out.println("la longueur de la liste de LM est : "+LM.size());
         System.out.println("la methode Convertion_LMA_LM fonctionne");
     }
-    
-    /*public static void test(){
-        for (int i=0; i<6; i++){
-            LMA.add("Mach_"+ String.valueOf(i));
-            MachFiabilite.add(CalculFiabilite(LMA.get(i))); //on calcul la fiabilite de la machine
-            System.out.println("LMA de "+i+" : "+LMA.get(i)+" et MachFiabilite de "+i+" = "+MachFiabilite.get(i));
-        }
-        System.out.println("la longueur de la liste de LMA est : "+LMA.size());
-        System.out.println("la methode test fonctionne");
-    }*/
         
-    public static double Afficher_Fiabilite(ArrayList<String> LMA , ArrayList<Double> MachFiabilite , String Machine_trouve, Stage stage){
+    public static double Afficher_Fiabilite(ArrayList<String> LM , ArrayList<Double> MachFiabilite , String Machine_trouve, Stage stage){
         // recherche et affichage de la fiabilité
             double fiab;
             System.out.println("La machine entrée est : "+Machine_trouve);
-            int k = LMA.indexOf(Machine_trouve);
+            int k = LM.indexOf(Machine_trouve);
             //System.out.println(" position dans la liste de la machine entrée : "+k);
             if (Existance_MachineEntree(k)==true){
                 System.out.println("La machine existe dans la liste, elle se situe à la position : "+k);
@@ -75,8 +61,8 @@ public class SceneFiabilite extends NewFXMain{
                 //System.out.println("ds méthode Afficher_Fiabilité, la fiab = "+fiab);
             }
             else {
-                int n = (LMA.size() - 1);
-                System.out.println("Erreur : Les machines existantes vont de : "+LMA.get(0)+" à : "+LMA.get(n)+" Veuillez entrer une nouvelle machine");
+                int n = (LM.size() - 1);
+                System.out.println("Erreur : Les machines existantes vont de : "+LM.get(0)+" à : "+LM.get(n)+" Veuillez entrer une nouvelle machine");
                 fiab = -1;
                 // On va creer un message d'erreur pour prévenir l'utilisateur
                 GridPane Message_Erreur = new GridPane();
@@ -112,9 +98,7 @@ public class SceneFiabilite extends NewFXMain{
         pane.add(btAdd, 0, 4);
        
         btAdd.setOnAction((ActionEvent evt) -> {
-            InitialisationLMA();
-            Convertion_LMA_LM(LMA);
-            //test(); //on initialise les arraylist en vrai elles le seront déjà mais bon c un test
+            Convertion_LMA_LM(LMA); //on initialise les arraylist en vrai elles le seront déjà mais bon c un test
             String Machine_trouve = machine.getText(); 
             //on l'initialise à une valeur qui n'existe pas pour repérer les erreurs
             double fiab = Afficher_Fiabilite(LM , MachFiabilite , Machine_trouve, stage);
@@ -129,7 +113,7 @@ public class SceneFiabilite extends NewFXMain{
         
         btAddList.setOnAction(evt -> {
             String[] ListeCroissanteMachineEnFonctionFiab;
-            ListeCroissanteMachineEnFonctionFiab = TrieFiabilite(MachFiabilite,LMA);
+            ListeCroissanteMachineEnFonctionFiab = TrieFiabilite(MachFiabilite,LM);
             for (int i=0;i<ListeCroissanteMachineEnFonctionFiab.length;i++) {
                 Text text = new Text(ListeCroissanteMachineEnFonctionFiab[i]);
                 pane.add(text, 0, (i+5));
@@ -141,8 +125,5 @@ public class SceneFiabilite extends NewFXMain{
        return pane;
     }
     
-    
-    
-    
+    */
 }
- 
