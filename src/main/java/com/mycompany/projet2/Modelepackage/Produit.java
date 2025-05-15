@@ -36,6 +36,10 @@ public class Produit {
     
     //fin getter et setter
     
+    public void afficherProduit(){
+        System.out.println("code du produit = "+ this.codeProduit);
+        System.out.println("désignation du produit = "+ this.dProduit);
+    }
     @Override
     public String toString(){
         return "produit : " + this.dProduit + ", code : " + this.codeProduit;

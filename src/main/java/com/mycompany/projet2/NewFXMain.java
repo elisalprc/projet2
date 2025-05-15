@@ -11,6 +11,7 @@ import com.mycompany.projet2.Vuepackage.SceneFiabilite;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
+import com.mycompany.projet2.Vuepackage.VueProduit;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -164,7 +165,7 @@ public class NewFXMain extends Application {
         MenuItem voirProduit = new MenuItem("Consulter liste");
 
         ajtProduit.setOnAction(e -> {
-        // Changer vers la scène 1
+        cadrePoste.getChildren().setAll(new VueProduit());
         });
         modifProduit.setOnAction(e -> {
          // Changer vers la scène 2
