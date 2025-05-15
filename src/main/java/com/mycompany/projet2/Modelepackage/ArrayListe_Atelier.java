@@ -129,7 +129,6 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         this.atelier1 = new Atelier("Atelier de Fabrication",LMA, LPO, LPRO, LG, LOP);
     }
     
-    
 }  
 
  
