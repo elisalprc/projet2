@@ -98,7 +98,7 @@ public class VueAjtMachine extends GridPane {
         this.btAjt.setOnAction((t) -> {
             this.ctrlM=new ControleurMachine(this);
             this.ctrlM.ajtM(t);
-            // il pourrait ici passer atelier au controleur pour la modif. (t,atelier)
+            
         });
         }
         

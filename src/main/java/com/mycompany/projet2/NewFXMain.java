@@ -11,8 +11,9 @@ import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Modelepackage.Machine;
 import com.mycompany.projet2.Vuepackage.SceneFiabilite;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
+import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
+import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import java.util.ArrayList;
-//import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -39,8 +40,13 @@ import javafx.stage.Stage;
  * @author elisa
  */
 public class NewFXMain extends Application {
-    static ArrayListe_Atelier creation = new ArrayListe_Atelier(); //creation.getAtelier()
+    private static ArrayListe_Atelier creation = new ArrayListe_Atelier(); //creation.getAtelier()
+
+    public static ArrayListe_Atelier getCreation() {
+        return creation;
+    }
     
+
     @Override
     public void start(Stage primaryStage) {
          BorderPane root = new BorderPane();  // structure principale
@@ -107,7 +113,7 @@ public class NewFXMain extends Application {
          // Changer vers la scène 2
         });
         voirMachine.setOnAction(e -> {
-         // Changer vers la scène 3
+            cadrePoste.getChildren().setAll(new VueConsultationMachine());
         });
         menuMachine.getItems().addAll(ajtMachine,modifMachine,voirMachine);
        
@@ -204,8 +210,8 @@ public class NewFXMain extends Application {
             SceneFiabilite scenefiab = new SceneFiabilite(cadrePoste);
             GridPane vue = scenefiab.getVueFiab(primaryStage);  // On récupère l'interface
 
-            cadrePoste.getChildren().setAll(vue);
-        });
+            cadrePoste.getChildren().setAll(vue); 
+        }); 
     }
     
     /**
