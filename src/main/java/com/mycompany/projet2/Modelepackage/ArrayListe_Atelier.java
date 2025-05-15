@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2.Modelepackage;
 
+import static com.mycompany.projet2.Fiabilite.CalculFiabilite;
 import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Modelepackage.Equipement;
 import com.mycompany.projet2.Modelepackage.Gamme;
@@ -22,7 +23,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
     // objets utiles pour creer les operateurs 
         public  ArrayList<Equipement> LEQ = new ArrayList<>();
     // pour l'atelier 
-        public   ArrayList<Machine> LMA = new ArrayList<>();
+        public   static ArrayList<Machine> LMA = new ArrayList<>();
         public   ArrayList<Poste> LPO = new ArrayList<>();
         public  ArrayList<Produit> LPRO = new ArrayList<>();
         public  ArrayList<Gamme> LG = new ArrayList<>();
@@ -30,13 +31,33 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         public  ArrayList<Operateur> LOP = new ArrayList<>();
         public   Atelier atelier1;
         
+        public static ArrayList<String> LM = new ArrayList<>();
+        //public ArrayList<Double> MachFiabilite = new ArrayList<>();
+        
     public ArrayListe_Atelier(){}
 
     public Atelier getAtelier() {
         return this.atelier1;
     }
+    
+    public ArrayList<Machine> getLMA(){
+        return this.LMA;
+    }
+    
+
+    public static ArrayList<String> Convertion_LMA_LM(ArrayList<Machine> LMA){
+        LMA = InitialisationLMA(LMA);
+        for (int i=0; i<LMA.size(); i++){
+            LM.add("Mach_"+ String.valueOf(i+1));
+            //MachFiabilite.add(CalculFiabilite(LM.get(i))); //on calcul la fiabilite de la machine
+            //System.out.println("LM de "+i+" : "+LM.get(i)+" et MachFiabilite de "+i+" = "+MachFiabilite.get(i));
+        }
+        //System.out.println("la longueur de la liste de LM est : "+LM.size());
+        //System.out.println("la methode Convertion_LMA_LM fonctionne");
+        return LM;
+    }
         
-    public void InitialisationLMA(){
+    public static ArrayList<Machine> InitialisationLMA(ArrayList<Machine> LMA){
     //création des machines de référence de l'atelier
         Machine M1 = new Machine("ref:001","découp laser","machine de découpe",0,0,10,2,"libre","machine1","eqDcp");
         Machine M2 = new Machine("ref:002","imprimante 3D","imprimante",5,5,30,8,"libre","machine2","eqimpression");
@@ -52,7 +73,8 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         LMA.add(M4);
         LMA.add(M5);
         LMA.add(M6);
-        LMA.add(M7);    
+        LMA.add(M7); 
+        return LMA;
     }
     
     public void InitialisationLPO(){
@@ -120,7 +142,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
     }
     
     public void atelier_base(){  // methode de classe 
-        InitialisationLMA();
+        InitialisationLMA(LMA);
         InitialisationLPO();
         InitialisationLEQ();
         InitialisationLPRO();
