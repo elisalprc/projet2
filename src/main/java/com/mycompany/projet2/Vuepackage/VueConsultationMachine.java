@@ -4,7 +4,10 @@
  */
 package com.mycompany.projet2.Vuepackage;
 
+import com.mycompany.projet2.Controleurpackage.ControleurConsultationMachine;
+import com.mycompany.projet2.Controleurpackage.ControleurMachine;
 import com.mycompany.projet2.Modelepackage.Machine;
+import static com.mycompany.projet2.NewFXMain.getCreation;
 import java.util.ArrayList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -16,18 +19,20 @@ import javafx.scene.layout.TilePane;
  * @author elisa
  */
 public class VueConsultationMachine extends TilePane {   //smooth 
+    private ArrayList<Machine> listeM; 
+    private ControleurConsultationMachine ctrlM;
     
-    public VueConsultationMachine(ArrayList<Machine> listeM) {
+    public VueConsultationMachine() {
+        this.listeM = getCreation().getAtelier().getListeMachines();
         this.setVgap(5);
         this.setPadding(new Insets(10,10,10,10));
-        int t = listeM.size();
-        for(int i=0;i<=t;i++) {
-            Button btn = new Button(listeM.get(i).getDmachine());
-            this.getChildren().add(btn);
+        for(Machine machine : listeM) {   //prend successivement les valeurs de la liste machine 
+            Button btn = new Button(machine.getDmachine());
             btn.setOnAction(e -> {
-                //afficher les infos en bas dans la fenêtre 
-        
+                this.ctrlM=new ControleurConsultationMachine(this);
+                this.ctrlM.voirM(machine);
         });
+            this.getChildren().add(btn);
         }
     
 }
