@@ -214,8 +214,6 @@ public class NewFXMain extends Application {
         //System.out.println(creation.getAtelier().getListeMachines());
         
         launch(args); 
-        
-        
-        
+         
 }
 }
