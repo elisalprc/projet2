@@ -20,18 +20,23 @@ import java.util.ArrayList;
 public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de base
    
     // objets utiles pour creer les operateurs 
-        public static ArrayList<Equipement> LEQ = new ArrayList<>();
+        public  ArrayList<Equipement> LEQ = new ArrayList<>();
     // pour l'atelier 
-        public static  ArrayList<Machine> LMA = new ArrayList<>();
-        public static  ArrayList<Poste> LPO = new ArrayList<>();
-        public static ArrayList<Produit> LPRO = new ArrayList<>();
-        public static ArrayList<Gamme> LG = new ArrayList<>();
-        public static ArrayList<Operation> LOPE = new ArrayList<>();
-        public static ArrayList<Operateur> LOP = new ArrayList<>();
-        public static  Atelier Atelier_de_fabrication;
+        public   ArrayList<Machine> LMA = new ArrayList<>();
+        public   ArrayList<Poste> LPO = new ArrayList<>();
+        public  ArrayList<Produit> LPRO = new ArrayList<>();
+        public  ArrayList<Gamme> LG = new ArrayList<>();
+        public  ArrayList<Operation> LOPE = new ArrayList<>();
+        public  ArrayList<Operateur> LOP = new ArrayList<>();
+        public   Atelier atelier1;
         
+    public ArrayListe_Atelier(){}
+
+    public Atelier getAtelier() {
+        return this.atelier1;
+    }
         
-    public static void InitialisationLMA(){
+    public void InitialisationLMA(){
     //création des machines de référence de l'atelier
         Machine M1 = new Machine("ref:001","découp laser","machine de découpe",0,0,10,2,"libre","machine1","eqDcp");
         Machine M2 = new Machine("ref:002","imprimante 3D","imprimante",5,5,30,8,"libre","machine2","eqimpression");
@@ -50,7 +55,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         LMA.add(M7);    
     }
     
-    public static void InitialisationLPO(){
+    public void InitialisationLPO(){
     //création des postes de référence de l'atelier
         Poste poste1 = new Poste("Tourneur industriel","production de pièces par enlèvement de matières. Peut utiliser : outils de coupe, tour ou fraiseuse",LMA,"poste1","eqTourneur");
         Poste poste2 = new Poste("Opérateur de fabrication","assurer la fabrication des produits. Peut utiliser des machines traditionnelles ou a commande numérique",LMA,"poste2","eqOF");
@@ -65,11 +70,11 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         LPO.add(poste5);
     }
     
-    public static void InitialisationLEQ(){
+    public void InitialisationLEQ(){
         //bah j'ai pas compris ce que c'était un équipement TT est ce que c vraiment utile ??????
     }
     
-    public static void InitialisationLPRO(){
+    public void InitialisationLPRO(){
     //création des produits de référence de notre atelier de fabrication
         Produit Toto_en_metal = new Produit("produit1","Goodies Toto en metal");
         Produit Toto_carosserie = new Produit("produit2","Goodies carosserie Toto pour voiture");
@@ -84,7 +89,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         LPRO.add(Toto_aspirateur);    
     }
     
-    public static void InitialisationLOP(){
+    public void InitialisationLOP(){
     //création des opérateurs de référence de notre atelier de fabrication
         Operateur op1 = new Operateur("Terrar","Véronique",001,LEQ);
         Operateur op2 = new Operateur("Dupont","Dupuis",002,LEQ);
@@ -99,7 +104,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         LOP.add(op5);
     }
     
-    public static void InitialisationLG(){
+    public void InitialisationLG(){
     //création des gammes de référence de notre atelier de fabrication
         Gamme gamme1 = new Gamme("gamme1 : pour Toto_en_metal",LOPE,LEQ);
         Gamme gamme2 = new Gamme("gamme2 : pour Toto_carosserie",LOPE,LEQ);
@@ -114,33 +119,17 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         LG.add(gamme5);
     }
     
-    public static Atelier atelier_base(){  // methode de classe 
+    public void atelier_base(){  // methode de classe 
         InitialisationLMA();
         InitialisationLPO();
         InitialisationLEQ();
         InitialisationLPRO();
         InitialisationLOP();
         InitialisationLG();
-        
-        return Atelier_de_fabrication = new Atelier("Atelier 1",LMA,LPO,LPRO,LG,LOP);
+        this.atelier1 = new Atelier("Atelier de Fabrication",LMA, LPO, LPRO, LG, LOP);
     }
     
 }  
 
-// on va entrer des infos dans l'atelier 
-        
-       /*Produit a = new Produit("a1","crayon");
-       A1.ajoutProduit(a);
-       Equipement test = new Equipement("e1","essai");
-       Operateur op = new Operateur("turing","alan",1,LEQ);
-       op.ajoutEquipement(test);
-       Operateur opa = new Operateur("bzz","maya",2,LEQ); //meme liste eq 
-       A1.ajoutOperateur(op);
-       A1.ajoutOperateur(opa);
-       Poste poste1 = new Poste("poste d'essai","poste1",LMA,"poste d'essai","poste1");
-       Machine M1 = new Machine("redTEST","decoupeuse","decoup laser",2,2,10,2,"libre","eqM1","machine1");
-       Machine M2 = new Machine("refTEST2","imprimante","imp 3D",4,4,30,8,"libre","eqM2","machine2");
-       poste1.ajoutMachine(M1);
-       poste1.ajoutMachine(M2);
-       A1.ajoutPoste(poste1);
-    */
+ 
+ 
