@@ -4,14 +4,6 @@
  */
 package com.mycompany.projet2.Modelepackage;
 
-import static com.mycompany.projet2.Fiabilite.CalculFiabilite;
-import com.mycompany.projet2.Modelepackage.Atelier;
-import com.mycompany.projet2.Modelepackage.Equipement;
-import com.mycompany.projet2.Modelepackage.Gamme;
-import com.mycompany.projet2.Modelepackage.Machine;
-import com.mycompany.projet2.Modelepackage.Poste;
-import com.mycompany.projet2.Modelepackage.Produit;
-import com.mycompany.projet2.Modelepackage.Operateur;
 import java.util.ArrayList;
 
 /**
@@ -40,13 +32,9 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         return this.atelier1;
     }
     
-    public ArrayList<Machine> getLMA(){
-        return this.LMA;
-    }
-    
 
     public static ArrayList<String> Convertion_LMA_LM(ArrayList<Machine> LMA){
-        LMA = InitialisationLMA(LMA);
+        LM.clear();
         for (int i=0; i<LMA.size(); i++){
             LM.add("Mach_"+ String.valueOf(i+1));
             //MachFiabilite.add(CalculFiabilite(LM.get(i))); //on calcul la fiabilite de la machine

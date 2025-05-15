@@ -31,6 +31,7 @@ public class Fiabilite {
     int i,k;  
     //création d'une liste des tokens donc des petits morceaux découpés de chaque ligne lue.
         ArrayList<String> tokens = new ArrayList<>();
+        tokens.clear();
         
     //chemin du fichier à lire et décomposer   
         String file_name = "C:/Documents/SuiviMaintenance";
@@ -53,6 +54,10 @@ public class Fiabilite {
         }
         
         k = 0;
+        Liste_Date.clear();
+        Liste_Horaire.clear();
+        Liste_Machine.clear();
+        Liste_Evenement.clear();
         for ( i=0; i<(tokens.size()-1); i=i+6){ //on ajoute les differents tokkens au différentes listes qui vont les garder
             Liste_Date.add(k,tokens.get(i));
             Liste_Horaire.add(k,tokens.get((i+1)));
@@ -153,7 +158,9 @@ public class Fiabilite {
         
         //fiabilité : 1 - (temps d'arrêt/temps d'observation)
         double fiabilite = (1 - ((double) tempsArret / (double) tempsObservation)); //double pour résultat décimal sinon on aura 0 ou 1
-        return fiabilite;
+        double fiabiliteArrondie = (double)Math.round(fiabilite * 100000) / 100000;
+        
+        return fiabiliteArrondie;
     }
     
     
@@ -175,11 +182,11 @@ public class Fiabilite {
     
     //faire une méthode de trie par ordre croissant voir premier semestre
     
-    public static String[] TrieFiabilite(ArrayList<Double> Liste_Fiabilite_des_Machines, ArrayList<String> LMA) {
+    public static String[] TrieFiabilite(ArrayList<Double> Liste_Fiabilite_des_Machines, ArrayList<String> LM) {
     //on crée une map pour associer les machines à leur fiabilité : c'est plus facile de traiter une liste à trier plutôt que d'en trier deux en parallèle, ça devrait limiter la casse...
         Map<String, Double> map = new HashMap<>();
-    for (int i = 0; i < LMA.size(); i++) {
-        map.put(LMA.get(i), Liste_Fiabilite_des_Machines.get(i));
+    for (int i = 0; i < LM.size(); i++) {
+        map.put(LM.get(i), Liste_Fiabilite_des_Machines.get(i));
     }
 
     // On trie ici les entrées de la map en fonction de la fiabilité

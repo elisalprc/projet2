@@ -5,8 +5,6 @@
 package com.mycompany.projet2;
 
 import com.mycompany.projet2.Modelepackage.ArrayListe_Atelier;
-import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.Convertion_LMA_LM;
-import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.LMA;
 import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Modelepackage.Machine;
 import com.mycompany.projet2.Vuepackage.SceneFiabilite;
@@ -208,7 +206,7 @@ public class NewFXMain extends Application {
           
         fiabilite.setOnAction(e -> {
             SceneFiabilite scenefiab = new SceneFiabilite(cadrePoste);
-            GridPane vue = scenefiab.getVueFiab(primaryStage);  // On récupère l'interface
+            GridPane vue = scenefiab.getVueFiab();  // On récupère l'interface
 
             cadrePoste.getChildren().setAll(vue); 
         }); 
@@ -219,18 +217,13 @@ public class NewFXMain extends Application {
      */
     public static void main(String[] args) {
         // creation de notre atelier de base en tant qu
-        ArrayList<Machine> LMA = new ArrayList<Machine>();
-        ArrayList<String> LM = new ArrayList<String>();
+        
         //creation.atelier_base();
-        //InitialisationLMA(ArrayList<Machine> LMA);
-        LM=Convertion_LMA_LM(LMA);
-        for (int i=0; i<LMA.size(); i++){
-                System.out.println(LMA.get(i));
-                System.out.println(LM.get(i));
-            }
-        
+               
         //System.out.println(creation.getAtelier().getListeMachines());
-        
+        // Au lancement du programme
+        //ArrayList<Machine> LMA = new ArrayList<>();
+        //InitialisationLMA(LMA); // Appel unique !
         launch(args); 
          
 }
