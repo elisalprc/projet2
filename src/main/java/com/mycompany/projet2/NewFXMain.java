@@ -11,6 +11,7 @@ import com.mycompany.projet2.Vuepackage.SceneFiabilite;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
+import com.mycompany.projet2.Vuepackage.VueModifierMachine;
 import com.mycompany.projet2.Vuepackage.VueProduit;
 import java.util.ArrayList;
 import javafx.application.Application;
@@ -109,7 +110,7 @@ public class NewFXMain extends Application {
         //a voir comment positionner la fenetre sur le coté et sa taille car elle a l'air un peu étroite 
         
         modifMachine.setOnAction(e -> {
-         // Changer vers la scène 2
+            cadrePoste.getChildren().setAll(new VueModifierMachine());
         });
         voirMachine.setOnAction(e -> {
             cadrePoste.getChildren().setAll(new VueConsultationMachine());

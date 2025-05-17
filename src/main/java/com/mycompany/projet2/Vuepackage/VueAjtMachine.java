@@ -19,8 +19,7 @@ import javafx.scene.layout.GridPane;
  * @author elisa
  */
 public class VueAjtMachine extends GridPane {
-    private ControleurMachine ctrlM;
-    private Atelier model; // utile pour ajouter la machine dans l'atelier 
+    private ControleurMachine ctrlM; 
     private TextField d;
     private TextField type;
     private TextField ref;

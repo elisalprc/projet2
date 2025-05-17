@@ -126,8 +126,9 @@ public class Machine extends Equipement {
         return this.dmachine + "\n ref : " + this.refMachine + "\n type : " + this.type + "\n endroit : " + this.origine_x + "," + this.origine_y + "\n cout : " + this.cout + " e/h \n temps : " +this.t + " h \n etat : " + this.etat;
     }
     
-    public void modifierMachine(String type, String dmachine, double origine_x, double origine_y, double cout, double t, String etat) {
+    public void modifierMachine(String type, String ref, String dmachine, double origine_x, double origine_y, double cout, double t, String etat) {
         this.type = type;
+        this.refMachine = ref;
         this.dmachine = dmachine;
         this.origine_x = origine_x;
         this.origine_y = origine_y;
