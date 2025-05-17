@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 
 
 /**
@@ -21,11 +22,18 @@ import javafx.scene.layout.TilePane;
 public class VueConsultationMachine extends TilePane {   //smooth 
     private ArrayList<Machine> listeM; 
     private ControleurConsultationMachine ctrlM;
+    private VBox affichage;
+
+    public VBox getAffichage() {
+        return affichage;
+    }
     
     public VueConsultationMachine() {
+        //exception a gerer si getCreation() renvoie null ==> pas encore d'atelier 
         this.listeM = getCreation().getAtelier().getListeMachines();
         this.setVgap(5);
         this.setPadding(new Insets(10,10,10,10));
+        this.getChildren().add(affichage = new VBox());
         for(Machine machine : listeM) {   //prend successivement les valeurs de la liste machine 
             Button btn = new Button(machine.getDmachine());
             btn.setOnAction(e -> {
