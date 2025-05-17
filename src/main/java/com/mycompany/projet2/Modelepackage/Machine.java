@@ -123,7 +123,7 @@ public class Machine extends Equipement {
     
     @Override 
     public String toString() {
-        return this.dmachine + ", ref : " + this.refMachine + ", type : " + this.type + ", endroit : " + this.origine_x + "," + this.origine_y + ", cout : " + this.cout + " e/h, temps : " +this.t + " h, etat : " + this.etat;
+        return this.dmachine + "\n ref : " + this.refMachine + "\n type : " + this.type + "\n endroit : " + this.origine_x + "," + this.origine_y + "\n cout : " + this.cout + " e/h \n temps : " +this.t + " h \n etat : " + this.etat;
     }
     
     public void modifierMachine(String type, String dmachine, double origine_x, double origine_y, double cout, double t, String etat) {

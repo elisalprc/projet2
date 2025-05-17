@@ -6,7 +6,7 @@ package com.mycompany.projet2.Controleurpackage;
 
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Modelepackage.Machine;
-import static com.mycompany.projet2.NewFXMain.getCreation; 
+import static com.mycompany.projet2.NewFXMain.getCreation; //exception ?? 
 import java.util.ArrayList;
 import javafx.event.ActionEvent;
 
@@ -35,6 +35,7 @@ public class ControleurMachine {
                          Double.parseDouble(this.vue.getTemps().getText()),
                          this.vue.getEtat().getText());
         machine.afficherMachine();
+        //gerer l'exception de si getCreation() est null ==> pas d'atelier
         getCreation().getAtelier().ajoutMachine(machine);
         
              } 

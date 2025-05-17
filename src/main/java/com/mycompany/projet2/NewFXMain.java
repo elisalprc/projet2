@@ -27,10 +27,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -219,7 +215,7 @@ public class NewFXMain extends Application {
     public static void main(String[] args) {
         // creation de notre atelier de base en tant qu
         
-        //creation.atelier_base();
+        creation.atelier_base();
                
         //System.out.println(creation.getAtelier().getListeMachines());
         // Au lancement du programme

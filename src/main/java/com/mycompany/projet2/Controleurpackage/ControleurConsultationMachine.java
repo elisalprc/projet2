@@ -9,6 +9,7 @@ import static com.mycompany.projet2.NewFXMain.getCreation;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 /**
  *
@@ -16,14 +17,14 @@ import javafx.scene.control.Label;
  */
 public class ControleurConsultationMachine {
     private VueConsultationMachine vue;
-
     
     public ControleurConsultationMachine(VueConsultationMachine vue) {
         this.vue = vue;
     }
     
     public void voirM(Machine machine) {
-        // Vbox avec les infos ? 
+        this.vue.getAffichage().getChildren().clear(); //pour que les affichages ne s'empilent pas 
+        this.vue.getAffichage().getChildren().add(new Label(machine.toString()));
     } 
     
  }
