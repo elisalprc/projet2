@@ -34,6 +34,10 @@ import javafx.stage.Stage;
  *
  * @author elisa
  */
+
+//avant de commencer, telecharger le fichier texte suivimaintenance et 
+//renseigner le chemin dans les classes maintenance et fiabilité 
+
 public class NewFXMain extends Application {
     private static ArrayListe_Atelier creation = new ArrayListe_Atelier(); //creation.getAtelier()
 
