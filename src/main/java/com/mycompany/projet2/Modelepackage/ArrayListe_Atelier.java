@@ -87,10 +87,10 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
     public void InitialisationLPRO(){
     //création des produits de référence de notre atelier de fabrication
         Produit Toto_en_metal = new Produit("produit1","Goodies Toto en metal");
-        Produit Toto_carosserie = new Produit("produit2","Goodies carosserie Toto pour voiture");
+        Produit Toto_carosserie = new Produit("produit2","Carosserie Toto");
         Produit Toto_statuette = new Produit("produit3","Goodies statue Toto ");
-        Produit Toto_robotise = new Produit("produit4","Robot Toto pour vous tenir compagnie et vous servir : c'est un bon compagnon pour discuter");
-        Produit Toto_aspirateur = new Produit("produit5","Goodies aspirateur en forme de Toto");
+        Produit Toto_robotise = new Produit("produit4","Robot Toto"); //pour vous tenir compagnie et vous servir : c'est un bon compagnon pour discuter
+        Produit Toto_aspirateur = new Produit("produit5","Aspirateur Toto");
     //initialisation de la liste de produits
         LPRO.add(Toto_en_metal);
         LPRO.add(Toto_carosserie);

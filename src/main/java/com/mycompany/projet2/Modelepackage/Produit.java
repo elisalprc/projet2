@@ -42,12 +42,15 @@ public class Produit {
     }
     @Override
     public String toString(){
-        return "produit : " + this.dProduit + ", code : " + this.codeProduit;
+        return "produit : " + this.dProduit + "\n   code : " + this.codeProduit;
     }
     
     public void modifierProduit(String codeproduit, String dproduit) {
         this.codeProduit = codeproduit;
         this.dProduit = dproduit;
+        System.out.println("Le produit est bien modifie :");
+        System.out.println("Modification du code par : "+codeproduit);
+        System.out.println("Modification de la designation par : "+dproduit);
     }
     
 }

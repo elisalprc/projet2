@@ -11,6 +11,7 @@ import com.mycompany.projet2.Vuepackage.SceneFiabilite;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
+import com.mycompany.projet2.Vuepackage.VueConsultationProduit;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
 import com.mycompany.projet2.Vuepackage.VueModifierProduit;
 import com.mycompany.projet2.Vuepackage.VueProduit;
@@ -98,6 +99,11 @@ public class NewFXMain extends Application {
         primaryStage.setScene(scene);  // Appliquer la scène
         primaryStage.setTitle("Atelier");  // Définir le titre de la fenêtre
         primaryStage.show();  // Afficher la fenêtre
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                 POUR LES MACHINES                                          //
+////////////////////////////////////////////////////////////////////////////////
         
         MenuButton menuMachine = new MenuButton("Machines");
         MenuItem ajtMachine = new MenuItem("Ajouter ");
@@ -119,6 +125,10 @@ public class NewFXMain extends Application {
         menuMachine.getItems().addAll(ajtMachine,modifMachine,voirMachine);
        
         menuBar.add(menuMachine, 0, 0);
+
+////////////////////////////////////////////////////////////////////////////////
+//                 POUR LES POSTES                                            //
+////////////////////////////////////////////////////////////////////////////////        
         
         MenuButton menuPoste = new MenuButton("Postes");
         MenuItem ajtPoste = new MenuItem("Ajouter ");
@@ -142,6 +152,10 @@ public class NewFXMain extends Application {
        
         menuBar.add(menuPoste, 1, 0);
         
+////////////////////////////////////////////////////////////////////////////////
+//                 POUR LES GAMMES                                            //
+////////////////////////////////////////////////////////////////////////////////        
+        
         MenuButton menuGamme = new MenuButton("Gammes");
         MenuItem ajtGamme = new MenuItem("Ajouter ");
         MenuItem modifGamme = new MenuItem("Modifier");
@@ -161,6 +175,9 @@ public class NewFXMain extends Application {
        
         menuBar.add(menuGamme, 2, 0);
         
+////////////////////////////////////////////////////////////////////////////////
+//                 POUR LES PRODUITS                                          //
+////////////////////////////////////////////////////////////////////////////////
         MenuButton menuProduit = new MenuButton("Produits");
         MenuItem ajtProduit = new MenuItem("Ajouter ");
         MenuItem modifProduit = new MenuItem("Modifier");
@@ -173,12 +190,16 @@ public class NewFXMain extends Application {
          cadrePoste.getChildren().setAll(new VueModifierProduit());
         });
         voirProduit.setOnAction(e -> {
-         // Changer vers la scène 3
+         cadrePoste.getChildren().setAll(new VueConsultationProduit());
         });
 
         menuProduit.getItems().addAll(ajtProduit,modifProduit,voirProduit);
        
         menuBar.add(menuProduit, 3, 0);
+        
+////////////////////////////////////////////////////////////////////////////////
+//                 POUR LE PERSONNEL                                          //
+////////////////////////////////////////////////////////////////////////////////
         
         MenuButton menuPersonnel = new MenuButton("Personnel");
         MenuItem ajtPersonnel = new MenuItem("Ajouter ");
@@ -199,13 +220,13 @@ public class NewFXMain extends Application {
        
        menuBar.add(menuPersonnel, 4, 0);
        
-       Button fiabilite =  new Button("Fiabilité");
-       menuBar.add(fiabilite, 5, 0);
        
 ////////////////////////////////////////////////////////////////////////////////
-//                FENETRE FIABILITE                                           //
+//                POUR LA FIABILITE                                           //
 ////////////////////////////////////////////////////////////////////////////////
        
+        Button fiabilite =  new Button("Fiabilité");
+        menuBar.add(fiabilite, 5, 0);
           
         fiabilite.setOnAction(e -> {
             SceneFiabilite scenefiab = new SceneFiabilite(cadrePoste);

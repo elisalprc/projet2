@@ -21,12 +21,13 @@ import javafx.scene.layout.GridPane;
  * @author chach
  */
 public class VueProduit extends GridPane{
+    //attributs:
     private ControleurProduit ctrlPro; 
     private TextField codeproduit;
     private TextField dproduit;
     private Button btAjt_Produit;
     
-   
+   //getters et setters:
     public TextField getCodeproduit(){
         return codeproduit;
     }
@@ -40,6 +41,7 @@ public class VueProduit extends GridPane{
         this.dproduit=dproduit;
     }
     
+    //controleur:
     public VueProduit() {                 
         this.setHgap(5.5);
         this.setVgap(5.5);

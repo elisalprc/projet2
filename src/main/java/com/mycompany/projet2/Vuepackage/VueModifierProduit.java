@@ -44,27 +44,27 @@ public class VueModifierProduit extends TilePane { //pourquoi un extends Tilpane
     public VueModifierProduit() {
         this.LPRO = getCreation().getAtelier().getListeProduits();
         this.setVgap(5);
-        this.setPadding(new Insets(10,10,10,10));
-        affichage.setHgap(5.5);
-        affichage.setVgap(5.5);
+        this.setPadding(new Insets(5,1,5,1));
+        affichage.setHgap(1.5);
+        affichage.setVgap(3.0);
         for(Produit produit : LPRO) {   //prend successivement les valeurs de la liste des produits
             Button btn = new Button(produit.getCodeproduit());
             btn.setOnAction(e -> {
                 //interface de modification apparaît 
-                
+                affichage.getChildren().clear();
                 affichage.add(new Label("Code"),1,1);
                 affichage.add(new Label("Désignation"),1,2);
  
                 affichage.add(this.codeproduit = new TextField(produit.getCodeproduit()),2,1);
                 affichage.add(this.dproduit = new TextField(produit.getDproduit()),2,2);
-                
+                this.getChildren().add(affichage);
                 this.btModif_Produit = new Button("Enregistrer");
                 affichage.add(btModif_Produit,1,4);                
                 btModif_Produit.setOnAction(ev-> {
                     this.ctrlPro=new ControleurModifierProduit(this);
                     this.ctrlPro.modifierP(produit);
+                    System.out.println(toString());
                 });
-                this.getChildren().add(affichage);
         });
             inter.getChildren().add(btn);
         }
