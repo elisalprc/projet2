@@ -9,8 +9,47 @@ package com.mycompany.projet2.Modelepackage;
  * @author eleprince01
  */
 public class Operation {
-    private String operation;
     private String dOperation;
-    private float dureeOperation;
+    private String refOperation;
+    private double dureeOperation;
     private String refEquipement;
+
+    public String getdOperation() {
+        return dOperation;
+    }
+
+    public String getRefOperation() {
+        return refOperation;
+    }
+
+    public double getDureeOperation() {
+        return dureeOperation;
+    }
+
+    public String getRefEquipement() {
+        return refEquipement;
+    }
+    
+    
+    
+    
+    public Operation(String d,String refOp, double duree, String refEq) {
+        this.dOperation = d;
+        this.refOperation = refOp;
+        this.dureeOperation = duree;
+        this.refEquipement = refEq;
+    }
+    
+    public Operation(){}
+    
+    public void modifDuree(double duree) {
+        this.dureeOperation = duree;
+    }
+    
+    public void modifRefEquipement(String refEq){
+        this.refEquipement = refEq;
+    }
+            
+    
+
 }

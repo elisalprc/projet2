@@ -35,7 +35,6 @@ public class VueModifierMachine extends TilePane {
     private TextField cx;
     private TextField cy;
     private TextField coutH;
-    private TextField temps;
     private Button btModif;
 
     public ArrayList<Machine> getListeM() {
@@ -69,12 +68,6 @@ public class VueModifierMachine extends TilePane {
     public TextField getCoutH() {
         return coutH;
     }
-
-    public TextField getTemps() {
-        return temps;
-    }
-    
-    
     
     public VueModifierMachine() {
         this.listeM = getCreation().getAtelier().getListeMachines();
@@ -94,7 +87,6 @@ public class VueModifierMachine extends TilePane {
                 affichage.add(new Label("Cx"),0,4);
                 affichage.add( new Label("Cy"),0,5);
                 affichage.add(new Label("Cout horaire"),0,6);
-                affichage.add(new Label("Temps"),0,7);
                 affichage.add(this.d = new TextField(machine.getDmachine()),1,0);
                 affichage.add(this.type = new TextField(machine.getType()),1,1);
                 affichage.add(this.ref = new TextField(machine.getRefMachine()),1,2);
@@ -102,7 +94,6 @@ public class VueModifierMachine extends TilePane {
                 affichage.add(this.cx = new TextField(String.valueOf(machine.getOrigine_x())),1,4);  //String.valueOf(<double>)
                 affichage.add(this.cy = new TextField(String.valueOf(machine.getOrigine_y())),1,5);
                 affichage.add(this.coutH = new TextField(String.valueOf(machine.getCout())),1,6);
-                affichage.add(this.temps = new TextField(String.valueOf(machine.getT())),1,7);
                 this.btModif = new Button("Enregistrer");
                 affichage.add(btModif,0,8);                
                 btModif.setOnAction(ev-> {

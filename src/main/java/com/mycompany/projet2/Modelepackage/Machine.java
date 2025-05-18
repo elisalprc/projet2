@@ -21,8 +21,9 @@ public class Machine extends Equipement {
     private double origine_x;
     private double origine_y;
     private double cout;
-    private double t; //temps en heures
     private String etat; // description de l'etat
+    
+    //j'ai retiré le temps d'utilisation, qui est donné par l'operation 
 
     public String getRefMachine() {
         return refMachine;
@@ -46,10 +47,6 @@ public class Machine extends Equipement {
 
     public double getCout() {
         return cout;
-    }
-
-    public double getT() {
-        return t;
     }
 
     public String getEtat() {
@@ -80,15 +77,11 @@ public class Machine extends Equipement {
         this.cout = cout;
     }
 
-    public void setT(double t) {
-        this.t = t;
-    }
-
     public void setEtat(String etat) {
         this.etat = etat;
     }
 
-    public Machine(String refMachine, String type, String dmachine, double origine_x, double origine_y, double cout, double t, String etat, String refEquipement, String dEquipement) {
+    public Machine(String refMachine, String type, String dmachine, double origine_x, double origine_y, double cout, String etat, String refEquipement, String dEquipement) {
         super(refEquipement, dEquipement);
         this.refMachine = refMachine;
         this.type = type;
@@ -96,18 +89,16 @@ public class Machine extends Equipement {
         this.origine_x = origine_x;
         this.origine_y = origine_y;
         this.cout = cout;
-        this.t = t;
         this.etat = etat;
     }
     
-    public Machine(String refMachine, String type, String dmachine, double origine_x, double origine_y, double cout, double t, String etat) {
+    public Machine(String refMachine, String type, String dmachine, double origine_x, double origine_y, double cout, String etat) {
         this.refMachine = refMachine;
         this.type = type;
         this.dmachine = dmachine;
         this.origine_x = origine_x;
         this.origine_y = origine_y;
         this.cout = cout;
-        this.t = t;
         this.etat=etat;
     }
     
@@ -117,45 +108,22 @@ public class Machine extends Equipement {
         System.out.println("dmachine = "+ this.dmachine);
         System.out.println("Origine = ("+ this.origine_x + "," + this.origine_y + ")");
         System.out.println("cout de la Machine = "+ this.cout);
-        System.out.println("temps d'utilisation de la Machine = "+ this.t);
         System.out.println("Etat de la Machine = "+ this.etat);
     }
     
     @Override 
     public String toString() {
-        return this.dmachine + "\n ref : " + this.refMachine + "\n type : " + this.type + "\n endroit : " + this.origine_x + "," + this.origine_y + "\n cout : " + this.cout + " e/h \n temps : " +this.t + " h \n etat : " + this.etat;
+        return this.dmachine + "\n ref : " + this.refMachine + "\n type : " + this.type + "\n endroit : " + this.origine_x + "," + this.origine_y + "\n cout : " + this.cout + "\n etat : "+ this.etat;
     }
     
-    public void modifierMachine(String type, String ref, String dmachine, double origine_x, double origine_y, double cout, double t, String etat) {
+    public void modifierMachine(String type, String ref, String dmachine, double origine_x, double origine_y, double cout, String etat) {
         this.type = type;
         this.refMachine = ref;
         this.dmachine = dmachine;
         this.origine_x = origine_x;
         this.origine_y = origine_y;
         this.cout = cout;
-        this.t = t;
         this.etat = etat;
     }
-     
-    /*
-    public static int[] idMachinePrAnalyse(ArrayList<Machine> L) {  // va retourner le tableau contenant les machines qui ont eu un arret, 
-                                                                   //on lui envoie la liste machine de Atelier et le document à lire ? 
-        // il faut renseigner le chemin jusqu'au fichier 
-        System.out.println("renseigner le chemin d'accès au fichier");
-        String chemin = Lire.S();
-        
-        int taille = L.size();
-        int[]M = new int[taille];   // le tableau a la place pour contenir toutes les machins de l'atelier 
-        int e = 0;
-        
-        
-        BufferedReader bfr = new BufferedReader(new FileReader(chemin)); 
-        String lignelue = bfr.readLine(); 
-        StringTokenizer t = new StringTokenizer(lignelue,"");
-        String machine = t.nextToken();
-        // verif si cette machine est dans l'atelier : comparer machine et dMachine de chaque objet de l'arrayList
-        
-
-        
-    } */
+    
 }

@@ -27,7 +27,6 @@ public class VueAjtMachine extends GridPane {
     private TextField cx;
     private TextField cy;
     private TextField coutH;
-    private TextField temps;
     private Button btAjt;
 
     public TextField getD() {
@@ -57,12 +56,6 @@ public class VueAjtMachine extends GridPane {
     public TextField getCoutH() {
         return coutH;
     }
-
-    public TextField getTemps() {
-        return temps;
-    }
-
-    
     
     public ControleurMachine getM() {
         return this.ctrlM;
@@ -82,7 +75,6 @@ public class VueAjtMachine extends GridPane {
         this.add(new Label("Cx"),0,4);
         this.add( new Label("Cy"),0,5);
         this.add(new Label("Cout horaire"),0,6);
-        this.add(new Label("Temps"),0,7);
         this.add(this.d = new TextField(),1,0);
         this.add(this.type = new TextField(),1,1);
         this.add(this.ref = new TextField(),1,2);
@@ -90,7 +82,6 @@ public class VueAjtMachine extends GridPane {
         this.add(this.cx = new TextField(),1,4);
         this.add(this.cy = new TextField(),1,5);
         this.add(this.coutH = new TextField(),1,6);
-        this.add(this.temps = new TextField(),1,7);
         this.btAjt = new Button("Ajouter");
         this.add(btAjt,1,8);
 

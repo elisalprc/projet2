@@ -31,7 +31,7 @@ public class Maintenance extends NewFXMain {
     //Methode pour écrire dans le gestionnaire de l'atelier et ainsi suivre les retours sur fiabilité et maintenance de notre atelier de fabrication:
     public static void GestionAtelier(){   
         
-        String file_name = "C:/Documents/SuiviMaintenance";
+        String file_name = "C:\\Users\\elisa\\OneDrive\\Desktop\\SuiviMaintenance";
         
         // pour lire un fichier texte
         try{
@@ -53,8 +53,8 @@ public class Maintenance extends NewFXMain {
             String Date = DateInputValide(); //pour entrer la date dans le gestionnaire de l'atelier (fichier texte)
             String Horaire = HoraireInputValide(); //pour entrer l'horaire
                 ArrayList<Machine> LM = new ArrayList<>();
-                Machine M1 = new Machine("redTEST","decoupeuse","decoup laser",2,2,10,2,"libre","eqM1","machine1");
-                Machine M2 = new Machine("refTEST2","imprimante","imp 3D",4,4,30,8,"libre","eqM2","machine2");
+                Machine M1 = new Machine("redTEST","decoupeuse","decoup laser",2,2,10,"libre","eqM1","machine1");
+                Machine M2 = new Machine("refTEST2","imprimante","imp 3D",4,4,30,"libre","eqM2","machine2");
                 LM.add(M1);
                 LM.add(M2);
             int Machine = MachineInputValid(LM); //pour entrer la machine

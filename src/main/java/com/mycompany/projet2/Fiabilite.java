@@ -34,7 +34,7 @@ public class Fiabilite {
         tokens.clear();
         
     //chemin du fichier à lire et décomposer   
-        String file_name = "C:/Documents/SuiviMaintenance";
+        String file_name = "C:\\Users\\elisa\\OneDrive\\Desktop\\SuiviMaintenance";
         
     // pour lire le fichier texte et récupérer chaque ligne dans une liste
         try{
