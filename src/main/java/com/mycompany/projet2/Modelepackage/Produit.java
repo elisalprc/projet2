@@ -18,19 +18,19 @@ public class Produit {
     }
     
     //getter et setter 
-    public String getCodeProduit() {
+    public String getCodeproduit() {
         return codeProduit;
     }
 
-    public void setCodeProduit(String codeProduit) {
+    public void setCodeproduit(String codeProduit) {
         this.codeProduit = codeProduit;
     }
 
-    public String getdProduit() {
+    public String getDproduit() {
         return dProduit;
     }
 
-    public void setdProduit(String dProduit) {
+    public void setDproduit(String dProduit) {
         this.dProduit = dProduit;
     }
     
@@ -43,6 +43,11 @@ public class Produit {
     @Override
     public String toString(){
         return "produit : " + this.dProduit + ", code : " + this.codeProduit;
+    }
+    
+    public void modifierProduit(String codeproduit, String dproduit) {
+        this.codeProduit = codeproduit;
+        this.dProduit = dproduit;
     }
     
 }

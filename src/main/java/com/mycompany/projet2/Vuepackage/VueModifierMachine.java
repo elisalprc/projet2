@@ -71,12 +71,12 @@ public class VueModifierMachine extends TilePane {
     
     public VueModifierMachine() {
         this.listeM = getCreation().getAtelier().getListeMachines();
-        this.setVgap(5);
-        this.setPadding(new Insets(10,10,10,10));
-        affichage.setHgap(5.5);
-        affichage.setVgap(5.5);
+        this.setVgap(0); //avant il y avait 5
+        this.setPadding(new Insets(1,1,1,1)); //avant il y avait 10,10,10,10
+        affichage.setHgap(0.0); //avant il y avait 5,5
+        affichage.setVgap(0.0); //avant il y avait 5,5
         for(Machine machine : listeM) {   //prend successivement les valeurs de la liste machine
-            Button btn = new Button(machine.getDmachine());
+            Button btn = new Button(machine.getRefMachine()); //avant ct getDmachine
             btn.setOnAction(e -> {
                 //interface de modification apparaît 
                 

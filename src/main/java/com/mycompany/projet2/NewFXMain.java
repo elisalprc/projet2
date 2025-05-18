@@ -12,6 +12,7 @@ import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
+import com.mycompany.projet2.Vuepackage.VueModifierProduit;
 import com.mycompany.projet2.Vuepackage.VueProduit;
 import java.util.ArrayList;
 import javafx.application.Application;
@@ -169,7 +170,7 @@ public class NewFXMain extends Application {
         cadrePoste.getChildren().setAll(new VueProduit());
         });
         modifProduit.setOnAction(e -> {
-         // Changer vers la scène 2
+         cadrePoste.getChildren().setAll(new VueModifierProduit());
         });
         voirProduit.setOnAction(e -> {
          // Changer vers la scène 3
@@ -218,11 +219,11 @@ public class NewFXMain extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // creation de notre atelier de base en tant qu
-        
+        // creation de notre atelier de base
         creation.atelier_base();
                
-        //System.out.println(creation.getAtelier().getListeMachines());
+        System.out.println(creation.getAtelier().getListeMachines());
+        System.out.println(creation.getAtelier().getListeProduits());
         // Au lancement du programme
         //ArrayList<Machine> LMA = new ArrayList<>();
         //InitialisationLMA(LMA); // Appel unique !
