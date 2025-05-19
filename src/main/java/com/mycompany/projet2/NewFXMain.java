@@ -11,6 +11,7 @@ import com.mycompany.projet2.Vuepackage.SceneFiabilite;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
+import com.mycompany.projet2.Vuepackage.VueConsultationGamme;
 import com.mycompany.projet2.Vuepackage.VueConsultationProduit;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
 import com.mycompany.projet2.Vuepackage.VueModifierProduit;
@@ -168,7 +169,7 @@ public class NewFXMain extends Application {
          // Changer vers la scène 2
         });
         voirGamme.setOnAction(e -> {
-         // Changer vers la scène 3
+            cadrePoste.getChildren().setAll(new VueConsultationGamme());
         });
 
         menuGamme.getItems().addAll(ajtGamme,modifGamme,voirGamme);

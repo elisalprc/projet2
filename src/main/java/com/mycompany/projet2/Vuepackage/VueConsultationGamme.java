@@ -37,6 +37,7 @@ public class VueConsultationGamme extends TilePane {
                 this.ctrlG=new ControleurConsultationGamme(this);
                 this.ctrlG.voirG(gamme);
             });
+            this.getChildren().add(btn);
             }
         }
     }
