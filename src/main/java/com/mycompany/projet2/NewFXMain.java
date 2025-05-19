@@ -243,8 +243,9 @@ public class NewFXMain extends Application {
         // creation de notre atelier de base
         creation.atelier_base();
                
-        System.out.println(creation.getAtelier().getListeMachines());
-        System.out.println(creation.getAtelier().getListeProduits());
+        //System.out.println(creation.getAtelier().getListeMachines());
+        //System.out.println(creation.getAtelier().getListeProduits());
+        //System.out.println(creation.getAtelier().getListeEq());
         // Au lancement du programme
         //ArrayList<Machine> LMA = new ArrayList<>();
         //InitialisationLMA(LMA); // Appel unique !

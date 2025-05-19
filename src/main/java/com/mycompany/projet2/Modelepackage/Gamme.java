@@ -13,6 +13,7 @@ import java.util.Iterator;
  */
 public class Gamme {
 //Atributs:
+    private String dProduit; //produit associé à la gamme 
     private String refGamme;
     private ArrayList<Operation> listeOperations;
     private ArrayList<Equipement> listeEquipement; 
@@ -35,6 +36,10 @@ public class Gamme {
 
     public ArrayList<Equipement> getListeEquipement() {
         return listeEquipement;
+    }
+    
+    public String getDProduit() {
+        return this.dProduit;
     }
 
     
@@ -80,17 +85,8 @@ public class Gamme {
     public double dureeGamme(){
         double c=0;
         for (Operation op : this.listeOperations){
-            c= c + op.getDureeOperation(); 
+            c=c+op.getDureeOperation(); 
         } 
         return c;
     }
 }
-
-
-
-
-//Les méthodes de calcul suivantes :
-
-//coutGamme(), (retourne le coût d’une gamme donnée (float)
-
-//dureeGamme (), (calcule la durée d’exécution d’une gamme (float).

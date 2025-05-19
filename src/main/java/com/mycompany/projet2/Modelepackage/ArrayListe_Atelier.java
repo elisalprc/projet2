@@ -65,6 +65,17 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         return LMA;
     }
     
+    public void InitialisationLOPE() {
+        Operation op1 = new Operation("decouper","dcp1", 2, "eqDcp");
+        Operation op2 = new Operation("imprimer","impr1",1,"eqimpression");
+        Operation op3 = new Operation("tester","test1",3,"eqtest");
+        Operation op4 = new Operation("percer","trou1",2,"eqMO");
+        this.LOPE.add(op1);
+        this.LOPE.add(op2);
+        this.LOPE.add(op3);
+        this.LOPE.add(op4);
+    }
+    
     public void InitialisationLPO(){
     //création des postes de référence de l'atelier
         Poste poste1 = new Poste("Tourneur industriel","production de pièces par enlèvement de matières. Peut utiliser : outils de coupe, tour ou fraiseuse",LMA,"poste1","eqTourneur");
@@ -82,6 +93,14 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
     
     public void InitialisationLEQ(){
         //bah j'ai pas compris ce que c'était un équipement TT est ce que c vraiment utile ??????
+        InitialisationLPO();
+        this.LMA = InitialisationLMA(this.LMA);
+        for(Poste poste : this.LPO) {
+            this.LEQ.add(poste);
+        }
+        for(Machine machine : this.LMA) {
+            this.LEQ.add(machine);
+        }
     }
     
     public void InitialisationLPRO(){
@@ -130,13 +149,13 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
     }
     
     public void atelier_base(){  // methode de classe 
-        InitialisationLMA(LMA);
-        InitialisationLPO();
+        //InitialisationLMA(LMA);
+        //InitialisationLPO();  //plus besoin car init dans InitialisationLEQ
         InitialisationLEQ();
         InitialisationLPRO();
         InitialisationLOP();
         InitialisationLG();
-        this.atelier1 = new Atelier("Atelier de Fabrication",LMA, LPO, LPRO, LG, LOP);
+        this.atelier1 = new Atelier("Atelier de Fabrication",LMA, LPO, LPRO, LG, LOP,LEQ);
     }
     
 }  

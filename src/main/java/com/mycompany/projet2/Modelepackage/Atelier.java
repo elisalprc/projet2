@@ -25,10 +25,15 @@ public class Atelier {
         private ArrayList<Produit> listeProduits;
         private ArrayList<Gamme> listeGamme;
         private ArrayList<Operateur> listeOperateurs;
+        private ArrayList<Equipement> listeEq;
         
     //Getters :
         public String getNom(){
             return nom;
+        }
+        
+        public ArrayList getListeEq() {
+            return listeEq;
         }
    
         public ArrayList getListeMachines() {
@@ -87,6 +92,16 @@ public class Atelier {
         }
         
         public Atelier(){}
+        
+        public Atelier(String nom, ArrayList listeMachines, ArrayList listePostes, ArrayList listeProduits, ArrayList listeGamme, ArrayList listeOperateurs, ArrayList listEq) {
+            this.nom = nom;
+            this.listeMachines = listeMachines;
+            this.listePostes = listePostes;
+            this.listeProduits = listeProduits;
+            this.listeGamme = listeGamme;
+            this.listeOperateurs = listeOperateurs;
+            this.listeEq = listEq;
+        }
     
     //Methodes:
         //Ajout d'un élément dans les listes:
