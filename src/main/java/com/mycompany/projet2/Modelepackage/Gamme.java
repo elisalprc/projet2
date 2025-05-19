@@ -19,7 +19,8 @@ public class Gamme {
     private ArrayList<Equipement> listeEquipement; 
     
 //Constructeur:
-    public Gamme(String refGamme, ArrayList<Operation> listeOperations, ArrayList<Equipement> listeEquipement){
+    public Gamme(String dProduit, String refGamme, ArrayList<Operation> listeOperations, ArrayList<Equipement> listeEquipement){
+        this.dProduit = dProduit;
         this.listeEquipement=listeEquipement;
         this.listeOperations=listeOperations;
         this.refGamme=refGamme;
@@ -54,7 +55,16 @@ public class Gamme {
     
     @Override
     public String toString() {
-        return this.refGamme + "\n Operations : " + this.listeOperations + "\n Equipements :" + this.listeEquipement;
+        String a ="";
+        for(Equipement eq : this.listeEquipement) {
+            a=a+"\n" + eq.getRefEquipement();
+        }
+        String b ="";
+        for(Operation op : this.listeOperations) {
+            b=b+"\n" + op.getRefOperation();
+        }
+    
+        return this.refGamme + "," + this.dProduit + a + b + "\n";
     }
     
     
@@ -73,9 +83,7 @@ public class Gamme {
     public void suppEq(Equipement equipement) {
         this.listeEquipement.remove(equipement);
     }
-    
- 
-    
+  
     //cout d'une Gamme:
     public double coutGamme(){
         
