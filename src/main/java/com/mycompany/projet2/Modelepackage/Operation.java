@@ -49,6 +49,11 @@ public class Operation {
     public void modifRefEquipement(String refEq){
         this.refEquipement = refEq;
     }
+    
+    @Override
+    public String toString() {
+       return "operation : " + this.dOperation + "\n" + "ref : ..."; 
+    }
             
     
 

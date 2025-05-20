@@ -26,6 +26,7 @@ public class Atelier {
         private ArrayList<Gamme> listeGamme;
         private ArrayList<Operateur> listeOperateurs;
         private ArrayList<Equipement> listeEq;
+        private ArrayList<Operation> listeOperations;
         
     //Getters :
         public String getNom(){
@@ -54,6 +55,10 @@ public class Atelier {
 
         public ArrayList getListeOperateurs() {
             return listeOperateurs;
+        }
+        
+        public ArrayList getListeOperations(){
+            return this.listeOperations;
         }
         
     //Setters :
@@ -93,7 +98,7 @@ public class Atelier {
         
         public Atelier(){}
         
-        public Atelier(String nom, ArrayList listeMachines, ArrayList listePostes, ArrayList listeProduits, ArrayList listeGamme, ArrayList listeOperateurs, ArrayList listEq) {
+        public Atelier(String nom, ArrayList listeMachines, ArrayList listePostes, ArrayList listeProduits, ArrayList listeGamme, ArrayList listeOperateurs, ArrayList listEq, ArrayList listeOpe) {
             this.nom = nom;
             this.listeMachines = listeMachines;
             this.listePostes = listePostes;
@@ -101,6 +106,7 @@ public class Atelier {
             this.listeGamme = listeGamme;
             this.listeOperateurs = listeOperateurs;
             this.listeEq = listEq;
+            this.listeOperations = listeOpe; 
         }
     
     //Methodes:

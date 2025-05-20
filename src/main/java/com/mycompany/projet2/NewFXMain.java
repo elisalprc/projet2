@@ -8,6 +8,7 @@ import com.mycompany.projet2.Modelepackage.ArrayListe_Atelier;
 import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Modelepackage.Machine;
 import com.mycompany.projet2.Vuepackage.SceneFiabilite;
+import com.mycompany.projet2.Vuepackage.VueAjoutGamme;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
@@ -163,7 +164,7 @@ public class NewFXMain extends Application {
         MenuItem voirGamme = new MenuItem("Consulter liste");
 
         ajtGamme.setOnAction(e -> {
-        // Changer vers la scène 1
+            cadrePoste.getChildren().setAll(new VueAjoutGamme());
         });
         modifGamme.setOnAction(e -> {
          // Changer vers la scène 2
