@@ -93,6 +93,7 @@ public class Machine extends Equipement {
     }
     
     public Machine(String refMachine, String type, String dmachine, double origine_x, double origine_y, double cout, String etat) {
+        super(dmachine,refMachine);
         this.refMachine = refMachine;
         this.type = type;
         this.dmachine = dmachine;

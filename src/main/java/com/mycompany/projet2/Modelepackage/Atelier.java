@@ -113,9 +113,11 @@ public class Atelier {
         //Ajout d'un élément dans les listes:
         public void ajoutMachine(Machine machine){
             listeMachines.add(machine); 
+            this.listeEq.add(machine);
         }
         public void ajoutPoste(Poste poste){
             listePostes.add(poste);
+            this.listeEq.add(poste);
         }
         public void ajoutProduit(Produit produit){
             listeProduits.add(produit);
