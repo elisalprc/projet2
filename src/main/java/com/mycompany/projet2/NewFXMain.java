@@ -238,6 +238,17 @@ public class NewFXMain extends Application {
         }); 
     }
     
+    /*Button btn_Schema_Atelier = new Button("Schéma Atelier");
+        menuBar.add(btn_Schema_Atelier, 7, 0);
+        
+        btn_Schema_Atelier.setOnAction(e -> {
+            VueSchema_Atelier at = new VueSchema_Atelier(leftPane);
+            GridPane vue_at = at.getVueAt();
+            
+            leftPane.getChildren().setAll(vue_at);
+        });
+    }*/
+    
     /**
      * @param args the command line arguments
      */
