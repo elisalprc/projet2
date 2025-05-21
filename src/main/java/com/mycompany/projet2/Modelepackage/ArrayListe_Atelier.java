@@ -134,12 +134,13 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
     }
     
     public void InitialisationLG(){
+        InitialisationLPRO();
     //création des gammes de référence de notre atelier de fabrication
-        Gamme gamme1 = new Gamme("Toto_en_Metal","gamme1",LOPE,LEQ);
-        Gamme gamme2 = new Gamme("Toto_carrosserie","gamme2",LOPE,LEQ);
-        Gamme gamme3 = new Gamme("Toto_statuette","gamme3",LOPE,LEQ);
-        Gamme gamme4 = new Gamme("Toto_robotise","gamme4",LOPE,LEQ);
-        Gamme gamme5 = new Gamme("Toto_aspirateur","gamme5",LOPE,LEQ);
+        Gamme gamme1 = new Gamme(this.LPRO.get(0),"gamme1",LOPE,LEQ);
+        Gamme gamme2 = new Gamme(this.LPRO.get(1),"gamme2",LOPE,LEQ);
+        Gamme gamme3 = new Gamme(this.LPRO.get(2),"gamme3",LOPE,LEQ);
+        Gamme gamme4 = new Gamme(this.LPRO.get(3),"gamme4",LOPE,LEQ);
+        Gamme gamme5 = new Gamme(this.LPRO.get(4),"gamme5",LOPE,LEQ);
     //initialisation de la liste des gammes
         LG.add(gamme1);
         LG.add(gamme2);
@@ -152,7 +153,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         //InitialisationLMA(LMA);
         //InitialisationLPO();  //plus besoin car init dans InitialisationLEQ
         InitialisationLEQ();
-        InitialisationLPRO();
+        //InitialisationLPRO();  fait dans Gamme
         InitialisationLOP();
         InitialisationLG();
         InitialisationLOPE();

@@ -44,7 +44,7 @@ public class ControleurAjoutGamme {
     public void ajouterG(){
         
         Gamme gamme; 
-        gamme = new Gamme(this.vue.getProduit().getPromptText(),this.vue.getRef().getText(),this.opSelect,this.eqSelect);
+        gamme = new Gamme(this.vue.getProduit().getValue(),this.vue.getRef().getText(),this.opSelect,this.eqSelect);
         getCreation().getAtelier().ajoutGammeFabrication(gamme);
         // a modifier : (voir classes arrayliste atelier et gamme : constructeur avecd un objet produit en argument 
         // et pas un string.  Je le ferai plus tard car la jpp et ducoup ca initialise par correctement

@@ -13,14 +13,15 @@ import java.util.Iterator;
  */
 public class Gamme {
 //Atributs:
-    private String dProduit; //produit associé à la gamme 
+    //private String dProduit; //produit associé à la gamme 
+    private Produit produit;
     private String refGamme;
     private ArrayList<Operation> listeOperations;
     private ArrayList<Equipement> listeEquipement; 
     
 //Constructeur:
-    public Gamme(String dProduit, String refGamme, ArrayList<Operation> listeOperations, ArrayList<Equipement> listeEquipement){
-        this.dProduit = dProduit;
+    public Gamme(Produit prod, String refGamme, ArrayList<Operation> listeOperations, ArrayList<Equipement> listeEquipement){
+        this.produit = prod;
         this.listeEquipement=listeEquipement;
         this.listeOperations=listeOperations;
         this.refGamme=refGamme;
@@ -40,7 +41,7 @@ public class Gamme {
     }
     
     public String getDProduit() {
-        return this.dProduit;
+        return this.produit.getDproduit();
     }
 
     
@@ -64,7 +65,7 @@ public class Gamme {
             b=b+"\n" + op.getRefOperation();
         }
     
-        return this.refGamme + "," + this.dProduit + a + b + "\n";
+        return this.refGamme + "," + getDProduit() + a + b + "\n";
     }
     
     

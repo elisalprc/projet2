@@ -28,14 +28,14 @@ import javafx.scene.layout.VBox;
 public class VueAjoutGamme extends TabPane {    // onglets : car beaucoup d'info dans la pane gamme
     private ControleurAjoutGamme ctrlG = new ControleurAjoutGamme(this);  // initialiser le controleur ici pour que les listes ne repartent pas de zero 
     private TextField refGamme;
-    private ComboBox produit;
+    private ComboBox<Produit> produit;
    
     
     public TextField getRef() {
         return this.refGamme;
     }
     
-    public ComboBox getProduit(){
+    public ComboBox<Produit> getProduit(){
         return this.produit;
     }
         
@@ -46,11 +46,11 @@ public class VueAjoutGamme extends TabPane {    // onglets : car beaucoup d'info
         VBox box = new VBox();
         box.getChildren().addAll(new Label("reference : "), refGamme = new TextField()); //AddAll pour ajt plusieurs trucs 
         
-        this.produit = new ComboBox();
+        this.produit = new ComboBox<Produit>();
         ArrayList<Produit> listeProduit;
         listeProduit = getCreation().getAtelier().getListeProduits();
         for(Produit p : listeProduit) {
-            this.produit.getItems().add(p.getDproduit());     // ajt dans la combobox 
+            this.produit.getItems().add(p);     // ajt dans la combobox 
         }
         box.getChildren().addAll(new Label(" "),new Label("Produit à fabriquer"),new Label(" "),this.produit);    // aerer 
         tabInfo.setClosable(false);      // l'utilisateur ne peut pas fermer l'onglet 
