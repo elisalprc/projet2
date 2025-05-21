@@ -23,8 +23,8 @@ public class ControleurModifierMachine {
         String nvType = this.vue.getType().getText();
         String nvRef = this.vue.getRef().getText();
         String nvD = this.vue.getD().getText();
-        double nvY = Double.parseDouble(this.vue.getCx().getText());
-        double nvX = Double.parseDouble(this.vue.getCy().getText());
+        double nvX = Double.parseDouble(this.vue.getCx().getText());
+        double nvY = Double.parseDouble(this.vue.getCy().getText());
         double nvCout = Double.parseDouble(this.vue.getCoutH().getText());
         String nvEtat = this.vue.getEtat().getText();
         machine.modifierMachine(nvType,nvRef,nvD,nvX,nvY,nvCout,nvEtat);
