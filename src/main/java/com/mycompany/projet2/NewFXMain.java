@@ -16,6 +16,7 @@ import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtPoste;
 import com.mycompany.projet2.Vuepackage.VueConsultationGamme;
 import com.mycompany.projet2.Vuepackage.VueConsultationProduit;
+import com.mycompany.projet2.Vuepackage.VueModifierGamme;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
 import com.mycompany.projet2.Vuepackage.VueModifierProduit;
 import com.mycompany.projet2.Vuepackage.VueProduit;
@@ -165,8 +166,8 @@ public class NewFXMain extends Application {
         ajtGamme.setOnAction(e -> {
             cadrePoste.getChildren().setAll(new VueAjoutGamme());
         });
-        modifGamme.setOnAction(e -> {
-         // Changer vers la scène 2
+        modifGamme.setOnAction(e -> { 
+            cadrePoste.getChildren().setAll(new VueModifierGamme());
         });
         voirGamme.setOnAction(e -> {
             cadrePoste.getChildren().setAll(new VueConsultationGamme());
