@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2.Vuepackage;
 
+import com.mycompany.projet2.Controleurpackage.ControleurModifierPoste;
 import com.mycompany.projet2.Modelepackage.*;
 import static com.mycompany.projet2.NewFXMain.getCreation;
 import java.util.ArrayList;
@@ -22,7 +23,8 @@ import javafx.scene.layout.VBox;
  * @author clema
  */
 public class VueModifierPoste extends GridPane {
-    //private ControleurModifierPoste ctlmp;
+    private ControleurModifierPoste ctlmp;
+    private VBox panneauAjoutMachines;
     private TilePane inter = new TilePane();
     private GridPane affichage = new GridPane();
     private TextField rposte;
@@ -32,7 +34,8 @@ public class VueModifierPoste extends GridPane {
     private Button btnEnr;
     private ArrayList<Machine> listMach = new ArrayList<Machine>();
     private ArrayList<Poste> listPoste = new ArrayList<Poste>();
-
+    private ArrayList<Machine> listM = new ArrayList<Machine>();
+    
     public TextField getRposte() {
         return rposte;
     }
@@ -82,7 +85,11 @@ public class VueModifierPoste extends GridPane {
     }
     
     private void afficherFormulairePoste(Poste poste) {
+        this.listM = getCreation().getAtelier().getListeMachines();
         affichage.getChildren().clear();
+        ArrayList<Machine> machinesDisponibles = new ArrayList<>(listM);
+        ArrayList<Machine> machinesDuPoste = new ArrayList<>(poste.getListeMachine());
+        machinesDisponibles.removeAll(machinesDuPoste);
         GridPane form = new GridPane(); // on utilise un GridPane pour le layout
         form.setHgap(5);
         form.setVgap(5);
@@ -100,8 +107,8 @@ public class VueModifierPoste extends GridPane {
         inter.setHgap(5); 
         inter.setVgap(5); 
         inter.setPrefColumns(5); 
-        inter.setAlignment(Pos.CENTER); 
-        for (Machine machine : poste.getListeMachine()) {
+        inter.setAlignment(Pos.CENTER_LEFT); 
+        for (Machine machine : machinesDuPoste) {
         Button btn = new Button(machine.getRefMachine());
         inter.getChildren().add(btn);
         }
@@ -110,17 +117,67 @@ public class VueModifierPoste extends GridPane {
         
         Button btnAjtMach = new Button("Ajouter des Machines");
         form.add(btnAjtMach, 0, 5);
+        panneauAjoutMachines = new VBox(); // vide au départ
+        form.add(panneauAjoutMachines, 0, 6, 2, 1);
+        btnAjtMach.setOnAction(evt->{
+            panneauAjoutMachines.getChildren().clear(); // on vide en premier
+            if(machinesDisponibles.isEmpty()){
+                Label info = new Label("Toutes les machines sont déjà affectées à ce poste.");
+                panneauAjoutMachines.getChildren().add(info);
+            }
+            else{
+                TilePane panneauMachines = new TilePane();
+                panneauMachines.setHgap(5);
+                panneauMachines.setVgap(5);
+                panneauMachines.setPrefColumns(5);
+                for (Machine m : machinesDisponibles) {
+                    Button btn = new Button(m.getRefMachine());
+                    btn.setOnAction(e -> {
+                        machinesDuPoste.add(m); // ajouter au poste
+                        panneauMachines.getChildren().remove(btn);// retirer le bouton de l'affichage
+                        machinesDisponibles.remove(m);
+                    });
+                    panneauMachines.getChildren().add(btn);
+                }
+
+                panneauAjoutMachines.getChildren().add(panneauMachines);
+            }
+        });
         
+        //Boutton pour supprimer des Machines
         Button btnSuppMach = new Button("Supprimer des Machines");
-        form.add(btnSuppMach, 0, 6);
+        form.add(btnSuppMach, 0, 7);
+        btnSuppMach.setOnAction(evt-> {
+            panneauAjoutMachines.getChildren().clear();
+            Label infoSupp = new Label("Cliquez sur une machine pour la supprimer.");
+            form.add(infoSupp, 0, 9, 2, 1); // ligne 8, span sur 2 colonnes (ajuste si besoin)
+
+            inter.getChildren().clear(); // Vider puis recréer les boutons avec leur logique de suppression
+            for (Machine machine : poste.getListeMachine()) {
+            Button btn = new Button(machine.getRefMachine());
+            btn.setOnAction(e -> {
+                machinesDuPoste.remove(machine); // retirer de la liste
+                inter.getChildren().remove(btn);   // retirer de l'affichage
+                form.getChildren().remove(infoSupp); //supprimer le text, sinon il reste indéfiniment
+                machinesDisponibles.add(machine); //ajouter la machine à la liste des machines restantes
+                });
+            inter.getChildren().add(btn);
+            }
+        });
         
         btnEnr = new Button("Enregistrer");
+        btnEnr.setOnAction(evt->{
+            panneauAjoutMachines.getChildren().clear();
+            this.ctlmp = new ControleurModifierPoste(this);
+            poste.setListeMachine(machinesDuPoste);
+            this.ctlmp.ModifierP(poste);
+        });
         Button btnRetour = new Button("Retour");
         btnRetour.setOnAction(e -> AfficherListePostes());
     
         HBox boutonsBas = new HBox(10, btnEnr, btnRetour);
         boutonsBas.setAlignment(Pos.CENTER_LEFT);
-        form.add(boutonsBas, 0, 7, 2, 1);
+        form.add(boutonsBas, 0, 8, 2, 1);
         
         affichage.getChildren().setAll(form);
     }
