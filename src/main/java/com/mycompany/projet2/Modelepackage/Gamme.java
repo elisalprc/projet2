@@ -26,6 +26,13 @@ public class Gamme {
         this.listeOperations=listeOperations;
         this.refGamme=refGamme;
     }
+    
+    public void modifierGamme(Produit p, String ref, ArrayList<Operation> listeOp, ArrayList<Equipement> listeEq){
+        this.produit = p;
+        this.refGamme = ref;
+        this.listeOperations = listeOp;
+        this.listeEquipement = listeEq;
+    }
 
 //Getters et setters:
     public String getRefGamme() {
@@ -42,6 +49,10 @@ public class Gamme {
     
     public String getDProduit() {
         return this.produit.getDproduit();
+    }
+    
+    public Produit getProduit() {
+        return this.produit;
     }
 
     

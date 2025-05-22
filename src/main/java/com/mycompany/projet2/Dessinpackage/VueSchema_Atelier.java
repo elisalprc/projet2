@@ -8,7 +8,6 @@ import static com.mycompany.projet2.Dessinpackage.Rec.Initialisation_Liste_rec;
 import com.mycompany.projet2.Modelepackage.Machine;
 import static com.mycompany.projet2.NewFXMain.getCreation;
 import java.util.ArrayList;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;

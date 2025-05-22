@@ -33,7 +33,6 @@ public class ControleurMachine {
                          Double.parseDouble(this.vue.getCy().getText()),
                          Double.parseDouble(this.vue.getCoutH().getText()),
                          this.vue.getEtat().getText());
-        machine.afficherMachine();
         //gerer l'exception de si getCreation() est null ==> pas d'atelier
         getCreation().getAtelier().ajoutMachine(machine);
         
