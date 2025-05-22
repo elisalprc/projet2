@@ -19,6 +19,7 @@ import com.mycompany.projet2.Vuepackage.VueConsultationGamme;
 import com.mycompany.projet2.Vuepackage.VueConsultationProduit;
 import com.mycompany.projet2.Vuepackage.VueModifierGamme;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
+import com.mycompany.projet2.Vuepackage.VueModifierPoste;
 import com.mycompany.projet2.Vuepackage.VueModifierProduit;
 import com.mycompany.projet2.Vuepackage.VueProduit;
 import java.util.ArrayList;
@@ -145,7 +146,7 @@ public class NewFXMain extends Application {
             cadrePoste.getChildren().setAll(new VueAjtPoste());
         });
         modifPoste.setOnAction(e -> {
-         // Changer vers la scène 2
+            cadrePoste.getChildren().setAll(new VueModifierPoste());
         });
         voirPoste.setOnAction(e -> {
          // Changer vers la scène 3
