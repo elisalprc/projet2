@@ -6,12 +6,15 @@ package com.mycompany.projet2.Vuepackage;
 
 import com.mycompany.projet2.Controleurpackage.ControleurPoste;
 import com.mycompany.projet2.Modelepackage.Machine;
+import static com.mycompany.projet2.NewFXMain.getCreation;
 import java.util.ArrayList;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 
 /**
  *
@@ -19,6 +22,7 @@ import javafx.scene.layout.GridPane;
  */
 public class VueAjtPoste extends GridPane {
     private ControleurPoste ctlp;
+    private TilePane inter = new TilePane();
     private TextField rposte;
     private TextField dposte;
     private TextField req;
@@ -80,13 +84,29 @@ public class VueAjtPoste extends GridPane {
         this.btnListMach = new Button("Ajouter des Machines");
         this.add(btnListMach, 0, 4);
         this.btnAjt = new Button("Ajouter le poste");
-        this.add(btnAjt, 0, 6);
+        VBox inter = new VBox(5); // espacement de 5 entre les boutons
+        this.add(inter, 0, 5, 2, 1); // ajoute inter sur 2 colonnes sous btnListMach
+        this.add(btnAjt, 0, 7);
         this.btnAnnul = new Button("Annuler");
-        this.add(btnAnnul, 1, 6);
+        this.add(btnAnnul, 1, 7);
         
         this.btnAjt.setOnAction(evt->{
             this.ctlp = new ControleurPoste(this);
             this.ctlp.ajtPost(evt);
+        });
+        
+        ArrayList<Machine> listeM = getCreation().getAtelier().getListeMachines();
+        this.btnListMach.setOnAction(evt -> {
+        inter.getChildren().clear(); // évite de réafficher les mêmes boutons
+        for (Machine machine : listeM) {
+            Button btn = new Button(machine.getRefMachine());
+            btn.setOnAction(e -> {
+                listMach.add(machine);
+                inter.getChildren().remove(btn); // supprime du bon conteneur
+            });
+            inter.getChildren().add(btn);
+        }
+            this.getChildren().add(inter);
         });
     }
 
