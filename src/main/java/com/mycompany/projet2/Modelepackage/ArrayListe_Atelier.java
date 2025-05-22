@@ -47,13 +47,13 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         
     public static ArrayList<Machine> InitialisationLMA(ArrayList<Machine> LMA){
     //création des machines de référence de l'atelier
-        Machine M1 = new Machine("Mach_1","découp laser","machine de découpe",0,0,10,"libre","machine1","eqDcp");
-        Machine M2 = new Machine("Mach_2","imprimante 3D","imprimante",5,5,30,"libre","machine2","eqimpression");
-        Machine M3 = new Machine("Mach_3","découp au jet d'eau","machine de découpe",1,7,10,"libre","machine3","eqDcp");
-        Machine M4 = new Machine("Mach_4","tour","machine outil",9,3,30,"libre","machine4","eqMO");
-        Machine M5 = new Machine("Mach_5","fraiseuse","machine outil",2,10,10,"libre","machine5","eqMO");
-        Machine M6 = new Machine("Mach_6","aléseuse","machine outil",10,4,30,"libre","machine6","eqMO");
-        Machine M7 = new Machine("Mach_7","MMT","machine d'essai et test",4,7,30,"libre","machine7","eqTest");
+        Machine M1 = new Machine("Mach_1","découp laser","machine de découpe",1,1,27035,"libre","machine1","eqDcp");
+        Machine M2 = new Machine("Mach_2","imprimante 3D","imprimante",450,1,30199,"libre","machine2","eqimpression");
+        Machine M3 = new Machine("Mach_3","découp au jet d'eau","machine de découpe",1,30,20729,"libre","machine3","eqDcp");
+        Machine M4 = new Machine("Mach_4","tour","machine outil",100,20,4089,"libre","machine4","eqMO");
+        Machine M5 = new Machine("Mach_5","fraiseuse","machine outil",70,70,1000,"libre","machine5","eqMO");
+        Machine M6 = new Machine("Mach_6","aléseuse","machine outil",120,70,300,"libre","machine6","eqMO");
+        Machine M7 = new Machine("Mach_7","MMT","machine d'essai et test",40,50,90995,"libre","machine7","eqTest");
     //initialisation de la liste de machine de l'atelier    
         LMA.add(M1);
         LMA.add(M2);
