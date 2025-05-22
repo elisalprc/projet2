@@ -108,6 +108,10 @@ public class VueAjtPoste extends GridPane {
         }
             this.getChildren().add(inter);
         });
+        
+        this.btnAnnul.setOnAction(evt ->{
+            this.getChildren().clear();
+        });
     }
 
     
