@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2;
 
+import com.mycompany.projet2.Dessinpackage.VueSchema_Atelier;
 import static com.mycompany.projet2.FichierTextpackage.Maintenance.GestionAtelier;
 import com.mycompany.projet2.Modelepackage.ArrayListe_Atelier;
 import com.mycompany.projet2.Modelepackage.Atelier;
@@ -235,19 +236,21 @@ public class NewFXMain extends Application {
 
             cadrePoste.getChildren().setAll(vue); 
         }); 
-    }
     
-    /*Button btn_Schema_Atelier = new Button("Schéma Atelier");
-        menuBar.add(btn_Schema_Atelier, 7, 0);
+    
+////////////////////////////////////////////////////////////////////////////////
+//                POUR L'AFFICHAGE DU SCHEMA DE L'ATELIER                     //
+////////////////////////////////////////////////////////////////////////////////
+    Button SchemaAtelier = new Button("Schéma Atelier");
+        menuBar.add(SchemaAtelier, 7, 0);
         
-        btn_Schema_Atelier.setOnAction(e -> {
+        SchemaAtelier.setOnAction(e -> {
             VueSchema_Atelier at = new VueSchema_Atelier(leftPane);
             GridPane vue_at = at.getVueAt();
             
             leftPane.getChildren().setAll(vue_at);
         });
-    }*/
-    
+    }
     /**
      * @param args the command line arguments
      */
