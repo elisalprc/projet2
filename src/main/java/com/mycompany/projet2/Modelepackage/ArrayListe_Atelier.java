@@ -16,11 +16,11 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         public  ArrayList<Equipement> LEQ = new ArrayList<>();
     // pour l'atelier 
         public   static ArrayList<Machine> LMA = new ArrayList<>();
-        public   ArrayList<Poste> LPO = new ArrayList<>();
-        public  ArrayList<Produit> LPRO = new ArrayList<>();
-        public  ArrayList<Gamme> LG = new ArrayList<>();
-        public  ArrayList<Operation> LOPE = new ArrayList<>();
-        public  ArrayList<Operateur> LOP = new ArrayList<>();
+        public   static ArrayList<Poste> LPO = new ArrayList<>();
+        public   static ArrayList<Produit> LPRO = new ArrayList<>();
+        public   static ArrayList<Gamme> LG = new ArrayList<>();
+        public   static ArrayList<Operation> LOPE = new ArrayList<>();
+        public   static ArrayList<Operateur> LOP = new ArrayList<>();
         public   Atelier atelier1;
         
         public static ArrayList<String> LM = new ArrayList<>();

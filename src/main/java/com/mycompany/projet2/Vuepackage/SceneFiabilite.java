@@ -9,10 +9,11 @@ package com.mycompany.projet2.Vuepackage;
  * @author chach
  */
 
-import static com.mycompany.projet2.Fiabilite.CalculFiabilite;
-import static com.mycompany.projet2.Fiabilite.TrieFiabilite;
+import static com.mycompany.projet2.FichierTextpackage.Fiabilite.CalculFiabilite;
+import static com.mycompany.projet2.FichierTextpackage.Fiabilite.TrieFiabilite;
 import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.Convertion_LMA_LM;
 import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.InitialisationLMA;
+import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.LMA;
 import com.mycompany.projet2.Modelepackage.Machine;
 import com.mycompany.projet2.NewFXMain;
 import static com.mycompany.projet2.Vuepackage.VerificationDonneeEntree.Existance_MachineEntree;
@@ -41,7 +42,7 @@ public class SceneFiabilite extends NewFXMain{
     
     static ArrayList<String> LM = new ArrayList<>(); //liste des machines de l'atelier dont on cherche à connaitre la fiabilité
     static ArrayList<Double> MachFiabilite = new ArrayList<>();
-    ArrayList<Machine> LMA = new ArrayList<>();
+    //ArrayList<Machine> LMA = new ArrayList<>();
     
         
     public static double Afficher_Fiabilite(ArrayList<String> LM , ArrayList<Double> MachFiabilite , String Machine_trouve){
@@ -50,7 +51,7 @@ public class SceneFiabilite extends NewFXMain{
             int k = LM.indexOf(Machine_trouve);
             //System.out.println(" position dans la liste de la machine entrée : "+k);
             if (Existance_MachineEntree(k)==true){
-                System.out.println("La machine existe dans la liste, elle se situe à la position : "+k);
+                System.out.println("La machine existe dans la liste, elle se situe à la position : "+(k+1));
                 fiab = MachFiabilite.get(k);
                 //System.out.println("ds méthode Afficher_Fiabilité, la fiab = "+fiab);
             }
@@ -104,8 +105,6 @@ public class SceneFiabilite extends NewFXMain{
         btAddList.setOnAction(evt -> {
             String[] ListeCroissanteMachineEnFonctionFiab;
             LM.clear();
-            LMA.clear();
-            LMA = InitialisationLMA(LMA);
             LM = Convertion_LMA_LM(LMA); //convertion bien effectuée et listes bien remplies
             MachFiabilite.clear();
             

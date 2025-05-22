@@ -44,7 +44,7 @@ public class ReadFile {
         return nbLignes;
     }
     
-        //pour lire un fichier texte
+    //pour lire un fichier texte et préserver en mémoire les lignes
     public String[] OpenFile() throws IOException {
         FileReader FR = new FileReader(path);
         String[] Data;

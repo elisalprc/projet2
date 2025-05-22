@@ -85,10 +85,10 @@ public class Verification {
     
     //vérification de la machine:
     public static int MachineInputValid(ArrayList<Machine> LM){
-        System.out.println("entrer le numero de la machine utilisée (de 1 a "+LM.size()+")");
+        System.out.println("entrer le numero de la machine utilisee (de 1 a "+LM.size()+")");
         int entrée = Lire.i();
         while ((entrée > LM.size())||(entrée < 1)){
-            System.out.println("la saisie de la machine est erronée veuillez recommencer (de 1 a "+LM.size()+")");
+            System.out.println("la saisie de la machine est erronee veuillez recommencer (de 1 a "+LM.size()+")");
             entrée = Lire.i();   
         }
         return entrée;    
@@ -96,7 +96,7 @@ public class Verification {
     
     //vérification de l'évènement:
     public static char EvenementInputValid(){
-    System.out.println("entrer l'evenement sous le format : A (pour arret) ou D (pour démarrage)");
+    System.out.println("entrer l'evenement sous le format : A (pour arret) ou D (pour demarrage)");
     char entrée = Lire.c();
     while (entrée != 'A'&& entrée != 'D'){
         System.out.println("Une erreur est survenue dans la saisie de l'evenement, veuillez entrer A ou D");
@@ -107,10 +107,10 @@ public class Verification {
     
     //vérification de l'opérteur: 
     public static int OperateurInputValide(ArrayList<Operateur> LOP){
-    System.out.println("entrer le numéro de l'opérateur (entre 100 et "+(100+LOP.size())+")");
+    System.out.println("entrer le numero de l'opérateur (entre 100 et "+(100+LOP.size())+")");
     int entrée = Lire.i(); 
     while ((entrée > 100+LOP.size())||(entrée < 100)){
-            System.out.println("la saisie de l'opérateur  est erronée veuillez recommencer (de 100 à "+(100+LOP.size())+")");
+            System.out.println("la saisie de l'operateur  est erronee veuillez recommencer (de 100 à "+(100+LOP.size())+")");
             entrée = Lire.i();   
         }
     return entrée;
@@ -121,7 +121,7 @@ public class Verification {
     System.out.println("entrer la cause : panne, accident, maintenance ou ok si aucun des trois (démarrage)");
     String entrée = Lire.S();
     while ((!"panne".equals(entrée))&&(!"accident".equals(entrée))&&(!"maintenance".equals(entrée))&&(!"ok".equals(entrée))){
-        System.out.println("Une erreur est survenue dans la saisie de la cause, veuillez entrer : panne, accident, maintenance ou ok si la machine redémarre");
+        System.out.println("Une erreur est survenue dans la saisie de la cause, veuillez entrer : panne, accident, maintenance ou ok si la machine redemarre");
         entrée = Lire.S();
     }
     return entrée;

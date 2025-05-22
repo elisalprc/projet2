@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2;
 
+import static com.mycompany.projet2.FichierTextpackage.Maintenance.GestionAtelier;
 import com.mycompany.projet2.Modelepackage.ArrayListe_Atelier;
 import com.mycompany.projet2.Modelepackage.Atelier;
 import com.mycompany.projet2.Modelepackage.Machine;
@@ -255,6 +256,7 @@ public class NewFXMain extends Application {
     public static void main(String[] args) {
         // creation de notre atelier de base
         creation.atelier_base();
+        GestionAtelier();
                
         //System.out.println(creation.getAtelier().getListeMachines());
         //System.out.println(creation.getAtelier().getListeProduits());
