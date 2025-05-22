@@ -73,10 +73,10 @@ public class VueAjtPoste extends GridPane {
         this.add(new Label("référence équipement :"),0,2);
         this.add(new Label("désignation :"),0,3);
         this.add(new Label("description :"),0,4);
-        this.add(rposte, 1, 0);
-        this.add(dposte, 1, 1);
-        this.add(req, 1, 2);
-        this.add(deq, 1, 3);
+        this.add(this.rposte = new TextField(), 1, 0);
+        this.add(this.dposte = new TextField(), 1, 1);
+        this.add(this.req = new TextField(), 1, 2);
+        this.add(this.deq = new TextField(), 1, 3);
         this.btnListMach = new Button("Ajouter des Machines");
         this.add(btnListMach, 0, 4);
         this.btnAjt = new Button("Ajouter le poste");
