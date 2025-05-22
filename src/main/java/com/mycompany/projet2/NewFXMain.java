@@ -13,6 +13,7 @@ import com.mycompany.projet2.Vuepackage.VueAjoutGamme;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueConsultationMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtMachine;
+import com.mycompany.projet2.Vuepackage.VueAjtPoste;
 import com.mycompany.projet2.Vuepackage.VueConsultationGamme;
 import com.mycompany.projet2.Vuepackage.VueConsultationProduit;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
@@ -139,10 +140,7 @@ public class NewFXMain extends Application {
         MenuItem voirPoste = new MenuItem("Consulter liste");
         
         ajtPoste.setOnAction(e -> {
-            AjouterPoste ajouterPoste = new AjouterPoste(cadrePoste);
-            GridPane vue = ajouterPoste.getVue();  // On récupère l'interface
-
-            cadrePoste.getChildren().setAll(vue);
+            cadrePoste.getChildren().setAll(new VueAjtPoste());
         });
         modifPoste.setOnAction(e -> {
          // Changer vers la scène 2
