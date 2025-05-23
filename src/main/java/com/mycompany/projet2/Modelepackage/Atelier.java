@@ -140,20 +140,20 @@ public class Atelier {
         }
         
         //suppression d'un élément des listes:
-        public void supprimerMachine(int index){
-            listeMachines.remove(index); 
+        public void supprimerMachine(Machine machine){
+            listeMachines.remove(machine); 
         }
-        public void supprimerPoste(int index){
-            listePostes.remove(index);
+        public void supprimerPoste(Poste poste){
+            listePostes.remove(poste);
         }
-        public void supprimerProduit(int index){
-            listeProduits.remove(index);
+        public void supprimerProduit(Produit produit){
+            listeProduits.remove(produit);
         }
-        public void supprimerOperateur(int index){
-            listeOperateurs.remove(index);
+        public void supprimerOperateur(Operateur operateur){
+            listeOperateurs.remove(operateur);
         }
-        public void supprimerGammeFabrication(int index){
-            listeGamme.remove(index);
+        public void supprimerGammeFabrication(Gamme gamme){
+            listeGamme.remove(gamme);
         }
         
         //modification d'un élement

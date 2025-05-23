@@ -203,7 +203,7 @@ public class NewFXMain extends Application {
             cadrePoste.getChildren().setAll(new VueModifierPersonnel());
         });
         voirPersonnel.setOnAction(e -> {
-         // Changer vers la scène 3
+            cadrePoste.getChildren().setAll(new VueConsulterPersonnel());
         });
 
        menuPersonnel.getItems().addAll(ajtPersonnel,modifPersonnel,voirPersonnel);
