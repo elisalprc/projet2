@@ -76,7 +76,6 @@ public class VueAjtPoste extends GridPane {
         this.add(new Label("désignation :"),0,1);
         this.add(new Label("référence équipement :"),0,2);
         this.add(new Label("désignation :"),0,3);
-        this.add(new Label("description :"),0,4);
         this.add(this.rposte = new TextField(), 1, 0);
         this.add(this.dposte = new TextField(), 1, 1);
         this.add(this.req = new TextField(), 1, 2);
