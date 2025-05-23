@@ -17,6 +17,7 @@ import com.mycompany.projet2.Vuepackage.VueAjtMachine;
 import com.mycompany.projet2.Vuepackage.VueAjtPoste;
 import com.mycompany.projet2.Vuepackage.VueConsultationGamme;
 import com.mycompany.projet2.Vuepackage.VueConsultationProduit;
+import com.mycompany.projet2.Vuepackage.VueConsulterPoste;
 import com.mycompany.projet2.Vuepackage.VueModifierGamme;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
 import com.mycompany.projet2.Vuepackage.VueModifierPoste;
@@ -149,7 +150,7 @@ public class NewFXMain extends Application {
             cadrePoste.getChildren().setAll(new VueModifierPoste());
         });
         voirPoste.setOnAction(e -> {
-         // Changer vers la scène 3
+            cadrePoste.getChildren().setAll(new VueConsulterPoste());
         });
         
         menuPoste.getItems().addAll(ajtPoste,modifPoste,voirPoste);
