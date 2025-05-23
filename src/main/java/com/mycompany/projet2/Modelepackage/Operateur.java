@@ -31,6 +31,11 @@ public class Operateur extends Personne {
         this.ListeEquipements.add(e);
     }
     
+    public void afficherOperateur(){
+        this.AfficherPersonne();
+        System.out.println("Liste des Equipements :" + this.ListeEquipements);
+    }
+    
     @Override
     public String toString(){
         return "identite : " + getPrenom() + " " + getNom() + ", eq : " + this.ListeEquipements;

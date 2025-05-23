@@ -4,6 +4,7 @@
  */
 package com.mycompany.projet2.Controleurpackage;
 
+import com.mycompany.projet2.Modelepackage.Machine;
 import com.mycompany.projet2.Modelepackage.Poste;
 import static com.mycompany.projet2.NewFXMain.getCreation;
 import com.mycompany.projet2.Vuepackage.VueAjtPoste;
@@ -28,4 +29,5 @@ public class ControleurPoste {
         poste.afficherPoste();
         getCreation().getAtelier().ajoutPoste(poste);
         } 
+    
 }

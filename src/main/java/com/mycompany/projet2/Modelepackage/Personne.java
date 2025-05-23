@@ -43,6 +43,12 @@ public class Personne {
         this.id = id;
     }
     
+    public void AfficherPersonne(){
+        System.out.println("nom = "+ this.nom);
+        System.out.println("prénom = "+ this.prenom);
+        System.out.println("Identifiant = "+ this.id);
+    }
+    
     @Override
     public String toString() {
         return this.prenom + " " + this.nom + ", code : " + this.id;

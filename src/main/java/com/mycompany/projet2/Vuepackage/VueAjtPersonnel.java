@@ -24,16 +24,35 @@ import javafx.scene.layout.VBox;
  * @author clema
  */
 public class VueAjtPersonnel extends GridPane {
-    private ControleurPersonnel ctlp = new ControleurPersonnel();
+    private ControleurPersonnel ctlp;
     private TilePane inter = new TilePane();
     private GridPane affichage = new GridPane();
     private ArrayList<Personne> listPersonnel; 
+    private ArrayList<Equipement> ListeEq;
     private TextField idPers; 
     private TextField nomPers; 
     private TextField prenomPers; 
     private Button btnListEq;
     private Button btnAjt;
     private Button btnAnnul;
+
+    public ArrayList<Equipement> getListEq() {
+        return ListeEq;
+    }
+
+    public TextField getIdPers() {
+        return idPers;
+    }
+
+    public TextField getNomPers() {
+        return nomPers;
+    }
+
+    public TextField getPrenomPers() {
+        return prenomPers;
+    }
+    
+    
     
     public VueAjtPersonnel(){
         this.setHgap(5.5);
@@ -55,17 +74,17 @@ public class VueAjtPersonnel extends GridPane {
         this.add(btnAnnul, 1, 7);
         
         this.btnAjt.setOnAction(evt->{
-            //this.ctlp = new ControleurPersonnel(this);
-            //this.ctlp.ajtPost(evt);
+            this.ctlp = new ControleurPersonnel(this);
+            this.ctlp.AjtOperateur(evt);
         });
         
-        ArrayList<Equipement> listeEq = getCreation().getAtelier().getListeEq();
+        this.ListeEq = getCreation().getAtelier().getListeEq();
         this.btnListEq.setOnAction(evt -> {
         inter.getChildren().clear(); // évite de réafficher les mêmes boutons
-        for (Equipement equipement : listeEq) {
+        for (Equipement equipement : ListeEq) {
             Button btn = new Button(equipement.getRefEquipement());
             btn.setOnAction(e -> {
-                listeEq.add(equipement);
+                ListeEq.add(equipement);
                 inter.getChildren().remove(btn); // supprime du bon conteneur
             });
             inter.getChildren().add(btn);
