@@ -4,7 +4,6 @@
  */
 package com.mycompany.projet2.Dessinpackage;
 
-import static com.mycompany.projet2.Dessinpackage.Rec.Initialisation_Liste_rec;
 import com.mycompany.projet2.Modelepackage.Machine;
 import static com.mycompany.projet2.NewFXMain.getCreation;
 import java.util.ArrayList;
@@ -13,8 +12,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
