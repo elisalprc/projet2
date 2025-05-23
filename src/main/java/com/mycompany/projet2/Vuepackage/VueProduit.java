@@ -5,11 +5,6 @@
 package com.mycompany.projet2.Vuepackage;
 
 import com.mycompany.projet2.Controleurpackage.ControleurProduit;
-import com.mycompany.projet2.Vuepackage.VueAjtMachine;
-import com.mycompany.projet2.Modelepackage.Machine;
-import static com.mycompany.projet2.NewFXMain.getCreation; 
-import java.util.ArrayList;
-import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
