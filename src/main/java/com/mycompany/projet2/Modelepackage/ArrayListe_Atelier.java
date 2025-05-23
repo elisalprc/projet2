@@ -21,7 +21,8 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         public   static ArrayList<Gamme> LG = new ArrayList<>();
         public   static ArrayList<Operation> LOPE = new ArrayList<>();
         public   static ArrayList<Operateur> LOP = new ArrayList<>();
-        public   Atelier atelier1;
+        public Personne Chef_Atelier;
+        public   Atelier atelier1; 
         
         public static ArrayList<String> LM = new ArrayList<>();
         //public ArrayList<Double> MachFiabilite = new ArrayList<>();
@@ -30,6 +31,10 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
 
     public Atelier getAtelier() {
         return this.atelier1;
+    }
+
+    public void InitialisationChefAtelier(){
+        this.Chef_Atelier = new Personne("Térieur", "Alain", 000);
     }
     
 
@@ -157,6 +162,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         InitialisationLOP();
         InitialisationLG();
         InitialisationLOPE();
+        InitialisationChefAtelier();
         this.atelier1 = new Atelier("Atelier de Fabrication",LMA, LPO, LPRO, LG, LOP,LEQ,LOPE);
     }
     
