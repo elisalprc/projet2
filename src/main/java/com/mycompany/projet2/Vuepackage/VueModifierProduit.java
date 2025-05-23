@@ -65,7 +65,16 @@ public class VueModifierProduit extends TilePane { //pourquoi un extends Tilpane
                     this.ctrlPro.modifierP(produit);
                     System.out.println(toString());
                 });
+                
+            Button supp = new Button("Supprimer le produit");
+            supp.setOnAction(s-> {
+                this.ctrlPro = new ControleurModifierProduit(this);
+                this.ctrlPro.supprimerP(produit);
+            });
+            affichage.add(supp,1,5);
+                
         });
+            
             inter.getChildren().add(btn);
         }
             this.getChildren().add(inter);

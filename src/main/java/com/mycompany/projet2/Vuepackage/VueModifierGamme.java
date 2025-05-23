@@ -137,14 +137,20 @@ public class VueModifierGamme extends VBox {
         
         //=====================================//
         //reste à valider !
+        HBox boutons = new HBox();
         
         Tab tabValider = new Tab("Valider la modification");
         Button ok = new Button("Valider");
         ok.setOnAction(e-> {
             this.ctrlG.modifierG(gammeMod);
         });
+        Button supp = new Button("Supprimer la gamme");
+        supp.setOnAction(e-> {
+            this.ctrlG.supprimerG(gammeMod);
+        });
+        boutons.getChildren().addAll(ok,supp);
         tabValider.setClosable(false);
-        tabValider.setContent(ok);
+        tabValider.setContent(boutons);
         this.modification.getTabs().add(tabValider);
         
         this.getChildren().add(modification);

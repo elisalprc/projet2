@@ -141,10 +141,12 @@ public class Atelier {
         
         //suppression d'un élément des listes:
         public void supprimerMachine(Machine machine){
-            listeMachines.remove(machine); 
+            listeMachines.remove(machine);
+            this.listeEq.remove(machine);
         }
         public void supprimerPoste(Poste poste){
             listePostes.remove(poste);
+            this.listeEq.remove(poste);
         }
         public void supprimerProduit(Produit produit){
             listeProduits.remove(produit);

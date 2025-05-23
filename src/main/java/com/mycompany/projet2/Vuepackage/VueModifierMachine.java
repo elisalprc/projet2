@@ -100,6 +100,12 @@ public class VueModifierMachine extends TilePane {
                     this.ctrlM=new ControleurModifierMachine(this);
                     this.ctrlM.modifierM(machine);
                 });
+                Button supp = new Button("Supprimer la machine");
+                affichage.add(supp,0,10);
+                supp.setOnAction(t-> {
+                    this.ctrlM = new ControleurModifierMachine(this);
+                    this.ctrlM.supprimerMachine(machine);
+                });
                 this.getChildren().add(affichage);
         });
             inter.getChildren().add(btn);

@@ -5,6 +5,7 @@
 package com.mycompany.projet2.Controleurpackage;
 
 import com.mycompany.projet2.Modelepackage.Produit;
+import static com.mycompany.projet2.NewFXMain.getCreation;
 import com.mycompany.projet2.Vuepackage.VueModifierProduit;
 
 /**
@@ -27,4 +28,8 @@ public class ControleurModifierProduit {
         
         produit.modifierProduit(nv_codeproduit,nv_dproduit);
     } 
+    
+    public void supprimerP(Produit p) {
+        getCreation().getAtelier().supprimerProduit(p);
+    }
 }

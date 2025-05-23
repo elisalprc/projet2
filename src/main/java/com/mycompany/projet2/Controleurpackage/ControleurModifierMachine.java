@@ -5,6 +5,7 @@
 package com.mycompany.projet2.Controleurpackage;
 
 import com.mycompany.projet2.Modelepackage.Machine;
+import static com.mycompany.projet2.NewFXMain.getCreation;
 import com.mycompany.projet2.Vuepackage.VueModifierMachine;
 import javafx.scene.control.TextField;
 
@@ -31,6 +32,10 @@ public class ControleurModifierMachine {
         
               
                 
+    }
+    
+    public void supprimerMachine(Machine machine) {
+        getCreation().getAtelier().supprimerMachine(machine);
     }
     
 }

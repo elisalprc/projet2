@@ -7,6 +7,7 @@ package com.mycompany.projet2.Controleurpackage;
 import com.mycompany.projet2.Modelepackage.Equipement;
 import com.mycompany.projet2.Modelepackage.Gamme;
 import com.mycompany.projet2.Modelepackage.Operation;
+import static com.mycompany.projet2.NewFXMain.getCreation;
 import com.mycompany.projet2.Vuepackage.VueAjoutGamme;
 import com.mycompany.projet2.Vuepackage.VueModifierGamme;
 import java.util.ArrayList;
@@ -42,6 +43,10 @@ public class ControleurModifierGamme {
     
     public void modifierG(Gamme gamme){
         gamme.modifierGamme(this.vue.getProduit().getValue(), this.vue.getRefGamme().getText(), opSelect, eqSelect);
+    }
+    
+    public void supprimerG(Gamme gamme) {
+        getCreation().getAtelier().supprimerGammeFabrication(gamme);
     }
     
     
