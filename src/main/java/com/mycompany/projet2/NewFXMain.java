@@ -197,7 +197,7 @@ public class NewFXMain extends Application {
         MenuItem voirPersonnel = new MenuItem("Consulter liste");
 
         ajtPersonnel.setOnAction(e -> {
-        // Changer vers la scène 1
+            cadrePoste.getChildren().setAll(new VueAjtPersonnel());
         });
         modifPersonnel.setOnAction(e -> {
          // Changer vers la scène 2
