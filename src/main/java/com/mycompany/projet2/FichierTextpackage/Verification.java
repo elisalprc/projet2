@@ -46,7 +46,7 @@ public class Verification {
         System.out.println("entrer la date sous le format : jj/mm/aaaa");
             String entrée = Lire.S();
             while (DateValide(entrée) == false){
-               System.out.println("La date entree est incorrecte");
+               System.out.println("La date entree est incorrecte. Veuillez entrer une date sous le bon format : jj/mm/aaaa, comprise entre la dernière date entrée et aujourd'hui");
                entrée = Lire.S();
             }
             return entrée; 

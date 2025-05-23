@@ -25,7 +25,8 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         public   Atelier atelier1; 
         
         public static ArrayList<String> LM = new ArrayList<>();
-        //public ArrayList<Double> MachFiabilite = new ArrayList<>();
+        public static ArrayList<String> LP = new ArrayList<>();
+        
         
     public ArrayListe_Atelier(){}
 
@@ -42,21 +43,25 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         LM.clear();
         for (int i=0; i<LMA.size(); i++){
             LM.add("Mach_"+ String.valueOf(i+1));
-            //MachFiabilite.add(CalculFiabilite(LM.get(i))); //on calcul la fiabilite de la machine
-            //System.out.println("LM de "+i+" : "+LM.get(i)+" et MachFiabilite de "+i+" = "+MachFiabilite.get(i));
         }
-        //System.out.println("la longueur de la liste de LM est : "+LM.size());
-        //System.out.println("la methode Convertion_LMA_LM fonctionne");
         return LM;
+    }
+    
+    public static ArrayList<String> Convertion_LPRO_LP(ArrayList<Produit> LPRO){
+        LP.clear();
+        for (int i=0; i<LPRO.size(); i++){
+            LP.add("produit"+ String.valueOf(i+1));
+        }
+        return LP;
     }
         
     public static ArrayList<Machine> InitialisationLMA(ArrayList<Machine> LMA){
     //création des machines de référence de l'atelier
         Machine M1 = new Machine("Mach_1","découp laser","machine de découpe",1,1,27035,"libre","machine1","eqDcp");
-        Machine M2 = new Machine("Mach_2","imprimante 3D","imprimante",450,1,30199,"libre","machine2","eqimpression");
+        Machine M2 = new Machine("Mach_2","imprimante 3D","imprimante",450,30,30199,"libre","machine2","eqimpression");
         Machine M3 = new Machine("Mach_3","découp au jet d'eau","machine de découpe",1,30,20729,"libre","machine3","eqDcp");
         Machine M4 = new Machine("Mach_4","tour","machine outil",100,20,4089,"libre","machine4","eqMO");
-        Machine M5 = new Machine("Mach_5","fraiseuse","machine outil",70,70,1000,"libre","machine5","eqMO");
+        Machine M5 = new Machine("Mach_5","fraiseuse","machine outil",70,900,1000,"libre","machine5","eqMO");
         Machine M6 = new Machine("Mach_6","aléseuse","machine outil",120,70,300,"libre","machine6","eqMO");
         Machine M7 = new Machine("Mach_7","MMT","machine d'essai et test",40,50,90995,"libre","machine7","eqTest");
     //initialisation de la liste de machine de l'atelier    

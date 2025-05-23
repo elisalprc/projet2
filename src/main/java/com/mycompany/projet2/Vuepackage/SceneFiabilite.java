@@ -12,9 +12,7 @@ package com.mycompany.projet2.Vuepackage;
 import static com.mycompany.projet2.FichierTextpackage.Fiabilite.CalculFiabilite;
 import static com.mycompany.projet2.FichierTextpackage.Fiabilite.TrieFiabilite;
 import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.Convertion_LMA_LM;
-import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.InitialisationLMA;
 import static com.mycompany.projet2.Modelepackage.ArrayListe_Atelier.LMA;
-import com.mycompany.projet2.Modelepackage.Machine;
 import com.mycompany.projet2.NewFXMain;
 import static com.mycompany.projet2.Vuepackage.VerificationDonneeEntree.Existance_MachineEntree;
 import static com.mycompany.projet2.Vuepackage.VerificationDonneeEntree.AfficherErreur;
@@ -49,11 +47,9 @@ public class SceneFiabilite extends NewFXMain{
         // recherche et affichage de la fiabilité
             double fiab;
             int k = LM.indexOf(Machine_trouve);
-            //System.out.println(" position dans la liste de la machine entrée : "+k);
             if (Existance_MachineEntree(k)==true){
                 System.out.println("La machine existe dans la liste, elle se situe à la position : "+(k+1));
                 fiab = MachFiabilite.get(k);
-                //System.out.println("ds méthode Afficher_Fiabilité, la fiab = "+fiab);
             }
             else {
                 int n = (LM.size() - 1);
@@ -118,11 +114,7 @@ public class SceneFiabilite extends NewFXMain{
             ListeCroissanteMachineEnFonctionFiab = TrieFiabilite(MachFiabilite,LM);
             for (String s : ListeCroissanteMachineEnFonctionFiab) {
                 vboxListe.getChildren().add(new Text(s));
-            }
-            /*for (int i=0;i<ListeCroissanteMachineEnFonctionFiab.length;i++) {
-                Text text = new Text(ListeCroissanteMachineEnFonctionFiab[i]);
-                vboxListe.getChildren().add(text);
-            }*/ 
+            } 
         }); 
        
             
