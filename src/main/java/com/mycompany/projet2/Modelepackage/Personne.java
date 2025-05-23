@@ -49,6 +49,12 @@ public class Personne {
         System.out.println("Identifiant = "+ this.id);
     }
     
+    public void ModifierPersonne(String nom, String prenom, int id){
+        this.nom = nom;
+        this.prenom = prenom;
+        this.id = id;
+    }
+    
     @Override
     public String toString() {
         return this.prenom + " " + this.nom + ", code : " + this.id;

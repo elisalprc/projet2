@@ -168,7 +168,7 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
         InitialisationLG();
         InitialisationLOPE();
         InitialisationChefAtelier();
-        this.atelier1 = new Atelier("Atelier de Fabrication",LMA, LPO, LPRO, LG, LOP,LEQ,LOPE);
+        this.atelier1 = new Atelier("Atelier de Fabrication",LMA, LPO, LPRO, LG, LOP,LEQ,LOPE,Chef_Atelier);
     }
     
 }  

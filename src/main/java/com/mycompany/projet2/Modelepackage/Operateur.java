@@ -36,6 +36,11 @@ public class Operateur extends Personne {
         System.out.println("Liste des Equipements :" + this.ListeEquipements);
     }
     
+    public void ModifierOperateur(String nom, String prenom, int id, ArrayList<Equipement> ListeEquipements){
+        this.ModifierPersonne(nom, prenom, id);
+        this.ListeEquipements = ListeEquipements;
+    }
+    
     @Override
     public String toString(){
         return "identite : " + getPrenom() + " " + getNom() + ", eq : " + this.ListeEquipements;

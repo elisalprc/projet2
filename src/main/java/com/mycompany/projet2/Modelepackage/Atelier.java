@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class Atelier {
     //Attributs :
         private String nom; 
+        private Personne chefAtelier;
         private ArrayList<Machine> listeMachines;
         private ArrayList<Poste> listePostes;
         private ArrayList<Produit> listeProduits;
@@ -60,6 +61,10 @@ public class Atelier {
         public ArrayList getListeOperations(){
             return this.listeOperations;
         }
+
+        public Personne getChefAtelier() {
+        return chefAtelier;
+        }
         
     //Setters :
         public void setNom(String nom){
@@ -95,10 +100,14 @@ public class Atelier {
             this.listeGamme = listeGamme;
             this.listeOperateurs = listeOperateurs;
         }
+
+        public void setChefAtelier(Personne chefAtelier) {
+        this.chefAtelier = chefAtelier;
+        }
         
         public Atelier(){}
         
-        public Atelier(String nom, ArrayList listeMachines, ArrayList listePostes, ArrayList listeProduits, ArrayList listeGamme, ArrayList listeOperateurs, ArrayList listEq, ArrayList listeOpe) {
+        public Atelier(String nom, ArrayList listeMachines, ArrayList listePostes, ArrayList listeProduits, ArrayList listeGamme, ArrayList listeOperateurs, ArrayList listEq, ArrayList listeOpe,  Personne chefAtelier) {
             this.nom = nom;
             this.listeMachines = listeMachines;
             this.listePostes = listePostes;
@@ -107,6 +116,7 @@ public class Atelier {
             this.listeOperateurs = listeOperateurs;
             this.listeEq = listEq;
             this.listeOperations = listeOpe; 
+            this.chefAtelier = chefAtelier;
         }
     
     //Methodes:

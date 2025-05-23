@@ -200,7 +200,7 @@ public class NewFXMain extends Application {
             cadrePoste.getChildren().setAll(new VueAjtPersonnel());
         });
         modifPersonnel.setOnAction(e -> {
-         // Changer vers la scène 2
+            cadrePoste.getChildren().setAll(new VueModifierPersonnel());
         });
         voirPersonnel.setOnAction(e -> {
          // Changer vers la scène 3
