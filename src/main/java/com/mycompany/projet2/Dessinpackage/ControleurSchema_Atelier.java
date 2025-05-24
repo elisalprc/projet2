@@ -6,6 +6,7 @@ package com.mycompany.projet2.Dessinpackage;
 
 import com.mycompany.projet2.Modelepackage.Machine;
 import java.util.ArrayList;
+import javafx.event.ActionEvent;
 import javafx.scene.layout.Pane;
 
 /**
@@ -23,8 +24,10 @@ public class ControleurSchema_Atelier {
         this.vue = vue;
     }
 
-     public void Afficher_Schema() {
-        this.vue.getVueAt().getChildren().clear();
+     public void Afficher_Schema(ActionEvent t) {
+        //this.vue.getVueAt().getChildren().clear();
+        leftPane.getChildren().setAll(new VueSchema_Atelier());
+        //VueSchema_Atelier vueAtelier = new VueSchema_Atelier();
         
     }
 }

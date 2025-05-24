@@ -8,21 +8,17 @@ import com.mycompany.projet2.Dessinpackage.VueSchema_Atelier;
 import static com.mycompany.projet2.FichierTextpackage.Maintenance.GestionAtelier;
 import com.mycompany.projet2.Modelepackage.*;
 import com.mycompany.projet2.Vuepackage.*;
-import java.util.ArrayList;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -65,7 +61,7 @@ public class NewFXMain extends Application {
         topBox.setAlignment(Pos.CENTER);
         
         // Créer le cadre gauche qui restera fixe
-        VBox leftPane = new VBox();  // Conteneur vertical pour l'encadré à gauche
+        Pane leftPane = new Pane();  // Conteneur vertical pour l'encadré à gauche
         leftPane.setStyle("-fx-border-color: grey; -fx-border-width: 2;");  // Style du cadre
         leftPane.setPadding(new Insets(10));  // Marge autour du cadre
         leftPane.setPrefWidth(550);  // Largeur du cadre
@@ -230,11 +226,13 @@ public class NewFXMain extends Application {
 ////////////////////////////////////////////////////////////////////////////////
     Button SchemaAtelier = new Button("Schéma Atelier");
         menuBar.add(SchemaAtelier, 7, 0);
-        
+        //Pane pane = new Pane();
         SchemaAtelier.setOnAction(e -> {
-            VueSchema_Atelier vueAtelier = new VueSchema_Atelier(leftPane);
+            leftPane.getChildren().clear(); //il faut impérativement nettoyer avant d'afficher :')
+            leftPane.getChildren().setAll(new VueSchema_Atelier());
+            //VueSchema_Atelier vueAtelier = new VueSchema_Atelier(leftPane);
         });
-    }
+    }   
     /**
      * @param args the command line arguments
      */

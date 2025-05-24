@@ -12,6 +12,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -19,44 +20,54 @@ import javafx.scene.layout.VBox;
  *
  * @author chach
  */
-public class VueSchema_Atelier {
+public class VueSchema_Atelier extends Pane{
     
-    private VBox leftPane;
+    //private Pane leftPane;
 
     private ArrayList<Rec> liste_recs = new ArrayList<Rec>();
     private ArrayList<Machine> LMA = new ArrayList<Machine>();
-    private Button VueAtelier;
+    private Button VueAtelier = new Button("Schéma at");
+    private ControleurSchema_Atelier ctrlA;
     
-    public VBox getVueAt() {
-        return leftPane;
-    }
+    //public Pane getVueAt() {
+    //    return leftPane;
+    //}
     
-    public VueSchema_Atelier(VBox leftPane){
-        this.leftPane = leftPane;
+    public VueSchema_Atelier(){
+        //this.leftPane = leftPane;
         
-        leftPane.getChildren().clear(); //il faut impérativement nettoyer avant d'afficher :')
+        this.getChildren().clear(); //il faut impérativement nettoyer avant d'afficher :')
         //this.vue.getVueAt().getChildren().clear(); //pour que les affichages ne s'empilent pas 
         this.LMA = getCreation().getAtelier().getListeMachines();
         this.liste_recs = Rec.Initialisation_Liste_rec(LMA);
         
+       // StackPane stack = new StackPane();
+
         for (int i = 0; i< this.liste_recs.size(); i++){
             Rec rec = this.liste_recs.get(i);
-            Text text = new Text ("Mach_"+(i+1));
-            StackPane stack = new StackPane();
-            Rectangle rectangle = new Rectangle();
-            rectangle.setX(rec.getOri_x());
-            rectangle.setY(this.liste_recs.get(i).getOri_y());
-            rectangle.setWidth(this.liste_recs.get(i).getLar());
-            rectangle.setHeight(this.liste_recs.get(i).getLon());
+            Rectangle rectangle = new Rectangle(rec.getOri_x(),rec.getOri_y(),rec.getLar(),rec.getLon());
+            //rectangle.setX(this.liste_recs.get(i).getOri_x());
+            //rectangle.setY(this.liste_recs.get(i).getOri_y());
+            //rectangle.setWidth(this.liste_recs.get(i).getLar());
+            //rectangle.setHeight(this.liste_recs.get(i).getLon());
             rectangle.setStroke(Color.BLACK);
             rectangle.setFill(Color.WHITE);
             
-            stack.setAlignment(Pos.CENTER);
-            stack.getChildren().addAll(rectangle, text);
-            stack.setLayoutX(liste_recs.get(i).getOri_x());
-            stack.setLayoutY(liste_recs.get(i).getOri_y());
+            Text text = new Text ("Mach_"+(i+1));
+            text.setX(rec.getOri_x() + 11);
+            text.setY(rec.getOri_y() + 31);
+            
+            //this.setAlignment(Pos.CENTER); //this c'est l'objet crée
+            this.getChildren().addAll(rectangle, text);
+            //this.setLayoutX(liste_recs.get(i).getOri_x());
+            //this.setLayoutY(liste_recs.get(i).getOri_y());
               
-            this.leftPane.getChildren().addAll(stack);
+            //this.leftPane.getChildren().addAll(this);
+            this.VueAtelier.setOnAction((t) -> {
+            this.ctrlA=new ControleurSchema_Atelier(this);
+            this.ctrlA.Afficher_Schema(t);
+            
+        });
         }
         
     }
