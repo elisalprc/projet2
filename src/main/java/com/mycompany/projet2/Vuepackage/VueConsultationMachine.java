@@ -42,7 +42,7 @@ import javafx.scene.layout.VBox;
     private void AfficherListeMachine(){
         affichage.getChildren().clear();
         for(Machine machine : listeM) {   //prend successivement les valeurs de la liste machine
-            Button btn = new Button(machine.getDmachine());
+            Button btn = new Button(machine.getType());
             btn.setOnAction(e -> AfficherFormulaireMachine(machine));
             affichage.getChildren().add(btn);
         }

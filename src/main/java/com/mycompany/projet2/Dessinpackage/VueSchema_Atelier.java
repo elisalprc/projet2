@@ -39,7 +39,8 @@ public class VueSchema_Atelier extends Pane{
             rectangle.setStroke(Color.PURPLE);
             rectangle.setFill(Color.PINK);
             
-            Text text = new Text ("Mach_"+(i+1));
+            Text text = new Text (this.LMA.get(i).getRefMachine());
+            //Text text = new Text ("Mach_"+(i+1));
             text.setX(rec.getOri_x() + 11);
             text.setY(rec.getOri_y() + 31);
             
