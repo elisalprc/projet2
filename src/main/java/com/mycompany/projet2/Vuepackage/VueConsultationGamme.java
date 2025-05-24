@@ -10,6 +10,7 @@ import static com.mycompany.projet2.NewFXMain.getCreation;
 import java.util.ArrayList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 
@@ -30,16 +31,36 @@ public class VueConsultationGamme extends TilePane {
         this.ListeGamme = getCreation().getAtelier().getListeGamme();
         this.setVgap(5);
         this.setPadding(new Insets(10,10,10,10));
-        this.getChildren().add(affichage = new VBox());
+        this.affichage = new VBox();
+        AfficherListeGamme();
+        this.getChildren().add(affichage);
+    }
+    
+    private  void AfficherListeGamme(){
+        affichage.getChildren().clear();
         for(Gamme gamme : this.ListeGamme) {
             Button btn = new Button(gamme.getRefGamme());
-            btn.setOnAction(e-> {
-                this.ctrlG=new ControleurConsultationGamme(this);
-                this.ctrlG.voirG(gamme);
-            });
-            this.getChildren().add(btn);
-            }
+            btn.setOnAction(e-> AfficherFormulaireGamme(gamme));
+            affichage.getChildren().add(btn);
         }
     }
+    
+    private void AfficherFormulaireGamme(Gamme gamme){
+        affichage.getChildren().clear();
+        this.ctrlG=new ControleurConsultationGamme(this);
+        this.ctrlG.voirG(gamme);
+        Button btnRetour = new Button("retour");
+        btnRetour.setOnAction(evt->AfficherListeGamme());
+        Button btnSupp = new Button("Supprimer");
+        btnSupp.setOnAction(evt-> {
+            getCreation().getAtelier().supprimerGammeFabrication(gamme);
+            AfficherListeGamme();
+        });
+        HBox boxBtn = new HBox();
+        boxBtn.setSpacing(10);
+        boxBtn.getChildren().addAll(btnRetour, btnSupp);
+        affichage.getChildren().add(boxBtn);
+    }
+}
     
 

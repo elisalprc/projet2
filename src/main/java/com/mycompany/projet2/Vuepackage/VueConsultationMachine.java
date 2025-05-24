@@ -60,6 +60,7 @@ import javafx.scene.layout.VBox;
             AfficherListeMachine();
         });
         HBox boxBtn = new HBox();
+        boxBtn.setSpacing(10);
         boxBtn.getChildren().addAll(btnRetour, btnSupp);
         affichage.getChildren().add(boxBtn);
     }
