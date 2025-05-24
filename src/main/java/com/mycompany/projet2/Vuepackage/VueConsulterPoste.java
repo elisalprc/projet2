@@ -95,6 +95,13 @@ public class VueConsulterPoste extends GridPane {
         form.add(btnRetour,0,6);
         btnRetour.setOnAction(evt->AfficherListePostes());
         
+        Button btnSupp = new Button("Supprimer");
+        btnSupp.setOnAction(evt ->{
+            getCreation().getAtelier().supprimerPoste(poste);
+            AfficherListePostes();
+        });
+        form.add(btnSupp, 1, 6);
+        
         affichage.getChildren().setAll(form);
     }
 }
