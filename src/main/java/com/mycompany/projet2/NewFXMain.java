@@ -232,7 +232,7 @@ public class NewFXMain extends Application {
             leftPane.getChildren().setAll(new VueSchema_Atelier());
             //VueSchema_Atelier vueAtelier = new VueSchema_Atelier(leftPane);
         });
-    }   
+    }
     /**
      * @param args the command line arguments
      */
