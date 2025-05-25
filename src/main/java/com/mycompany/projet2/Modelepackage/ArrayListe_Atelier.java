@@ -88,11 +88,11 @@ public class ArrayListe_Atelier { //classe a modifier pour creer un atelier de b
     
     public void InitialisationLPO(){
     //création des postes de référence de l'atelier
-        Poste poste1 = new Poste("Tourneur industriel","production de pièces par enlèvement de matières. Peut utiliser : outils de coupe, tour ou fraiseuse",LMA,"poste1","eqTourneur");
-        Poste poste2 = new Poste("Opérateur de fabrication","assurer la fabrication des produits. Peut utiliser des machines traditionnelles ou a commande numérique",LMA,"poste2","eqOF");
-        Poste poste3 = new Poste("Technicien de maintenance","assure le bon fonctionnement et l'etat optimal des machines de l'atelier de production",LMA,"poste3","eqTM");
-        Poste poste4 = new Poste("Technicien qualité","contrôler et assurer les produits fabriqués par l'entreprise",LMA,"poste4","eqTQ");
-        Poste poste5 = new Poste("Chef d'atelier","Coordiner et manager les équipes. S'occuper de l'atelier",LMA,"poste5","eqCA");
+        Poste poste1 = new Poste("Poste d'impression","impression papier, 3D, laser, etc.",LMA,"poste1","eqTourneur");
+        Poste poste2 = new Poste("poste de découpe","decoupe de tout type : laser, het d'eau, etc.",LMA,"poste2","eqOF");
+        Poste poste3 = new Poste("Poste d'assemblage","comme son nom l'indique",LMA,"poste3","eqTM");
+        Poste poste4 = new Poste("Poste de test","permet de tester les produits et valider le cahier des charges",LMA,"poste4","eqTQ");
+        Poste poste5 = new Poste("poste de conditionnement","preparer les produits pour la vente",LMA,"poste5","eqCA");
     //initialisation de la liste des postes de l'atelier
         LPO.add(poste1);
         LPO.add(poste2);
